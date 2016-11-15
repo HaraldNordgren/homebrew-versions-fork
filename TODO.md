@@ -1,5 +1,6 @@
 # TODO
-Fix 'depends_on' after changing the version
+Dont change any 'url' headings
+url "https://trac.macports.org/export/110576/trunk/dports/lang/gcc43/files/darwin10.diff"
 
 
 # Formulas
@@ -10,5 +11,5 @@ Fix 'depends_on' after changing the version
 ./jboss-as5.rb                      ->  JbossAs5
 ./gst-ffmpeg010.rb                  ->  GstFfmpeg010
 
-## Won't handle
+## Wont handle
 ./iojs.rb

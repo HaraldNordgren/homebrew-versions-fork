@@ -35,17 +35,13 @@ def replace_brew_class (file_name, regex_captures)
     end
 
     File.write(file_name, text)
-    #puts "Replaced names in #{file_name}"
 
     package_at_version = package + "@" + version
     $handled_packages.push({
-        #'package' => package,
-        #'version' => version,
         'classname_with_version' => classname_with_version,
         'package_at_version' => package_at_version,
         'file_without_extension' => File.basename(file_name, File.extname(file_name)),
         'original_filename' => file_name,
-        #'migrated_filename' => package_at_version + ".rb",
         'migrated_filename' => package + ".rb",
     })
 end
@@ -88,25 +84,44 @@ for filename in Dir["*.rb"]
 
     migrated_path = File.join(formula_dir, filename)
     system("git mv #{filename} #{migrated_path}")
-    system("git add #{migrated_path}")
+    #system("git add #{migrated_path}")
 end
 
 puts "STEP 1 DONE"
 puts
 
 for file_name in Dir["*.rb"]
-    text = File.read(file_name)
-    for handled_package in $handled_packages
-        file_without_extension = handled_package['file_without_extension']
-        #puts "Replacing #{file_without_extension} in #{file_name}"
-        text.gsub!(
-            /#{file_without_extension}/,
-            handled_package['package_at_version']
-        )
+
+    tmp_file_name = file_name + ".tmp"
+    open(tmp_file_name, 'w') do |tmp_file|
+
+        File.open(file_name).each_line do |line|
+
+            if line =~ /^[ ]+(url|homepage|mirror|\#include) /
+                #puts "Skipping replacement in '#{line}'"
+                tmp_file.puts line
+                next
+            end
+
+            for handled_package in $handled_packages
+                file_without_extension = handled_package['file_without_extension']
+                line.gsub!(
+                    /#{file_without_extension}/,
+                    handled_package['package_at_version']
+                )
+            end
+
+            tmp_file.puts line
+        end
     end
 
-    File.write(file_name, text)
-    #puts "Replaced all references in #{file_name}"
+    puts "Handled " + file_name
+
+    FileUtils.mv(
+        tmp_file_name,
+        file_name,
+        #:force => true
+    )
 end
 
 puts "STEP 2 DONE"
