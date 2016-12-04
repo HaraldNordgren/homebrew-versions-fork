@@ -1,0 +1,44 @@
+matrix:
+    include:
+        - os: osx
+          osx_image: xcode8.2
+          env:
+              - SKIP="allegro4 appledoc20 appledoc21 appledoc22"
+
+        - os: osx
+          osx_image: xcode8.1
+          env:
+              - SKIP="allegro4 appledoc20 appledoc21 appledoc22"
+
+        - os: osx
+          osx_image: xcode8
+          env:
+              - SKIP="allegro4 appledoc20 appledoc21"
+          before_script:
+              - brew untap homebrew/versions
+
+        - os: osx
+          osx_image: xcode7.3
+          env:
+              - SKIP="allegro4 appledoc20 appledoc21"
+          before_script:
+              - brew untap homebrew/versions
+
+        - os: osx
+          osx_image: xcode6.4
+          env:
+              - SKIP="allegro4 appledoc20 appledoc21 camlp5-606"
+          before_script:
+              - brew untap homebrew/versions
+
+language: ruby
+
+script:
+    - brew tap HaraldNordgren/homebrew-versions-fork
+    - brew unlink automake
+    - brew unlink autoconf
+    - ruby scripts/build_all_formulae.rb "$SKIP"
+
+notifications:
+    email: false
+
