@@ -1,41 +1,63 @@
 require 'fileutils'
 
-author = "haraldnordgren"
-tap_short_name = "versions-fork"
 
-tap_dir = "/usr/local/Homebrew/Library/Taps/#{author}/homebrew-#{tap_short_name}"
+debug_skip = false
 
-if ARGV.empty?
-    skip_packages = []
-else
-    skip_packages = ARGV[0].split(" ")
+
+REPO_SLUG = ENV['TRAVIS_REPO_SLUG']
+puts "REPO_SLUG: #{REPO_SLUG}"
+
+author, tap_name = REPO_SLUG.split("/")
+tap_short_name = tap_name.split("-")[1..-1].join("-")
+
+tap_cmd = "brew tap #{author}/#{tap_short_name}"
+successful_exit = system(tap_cmd)
+if not successful_exit
+    puts "Cannot tap with cmd: '#{tap_cmd}'"
+    exit 1
 end
 
-#timing_out = [
-#    'arangodb2',
-#    'bazel02',
-    #'boost-python159',
-    #'boost155',
-    #'boost159',
-    #'boost160',
-#]
-#skip_packages += timing_out
+tap_dir = "/usr/local/Homebrew/Library/Taps/#{author}/homebrew-#{tap_short_name}"
+puts tap_dir
+
+skip_packages_string = ARGV[0]
+
+if tap_short_name == 'versions-fork'
+    skip_packages_string = ARGV[0].gsub("-@", "-").gsub("@", "")
+    formula_glob = "#{tap_dir}/*.rb"
+    shorten_formula = lambda { |file_name|
+        return File.basename(file_name, File.extname(file_name))
+    }
+elsif tap_short_name == 'versions'
+    skip_packages_string = ARGV[0].gsub("-@", "@")
+    formula_glob = "#{tap_dir}/Aliases/*"
+    shorten_formula = lambda { |file_name|
+        return File.basename(file_name)
+    }
+end
+
+skip_packages = skip_packages_string.split(" ")
 
 timing_out = [
-    /arangodb[0-9]+/,
-    /bazel[0-9]+/,
-    /boost[0-9]+/,
-    /bootst-python[0-9]+/,
-    /duplicity06/,
-    /erlang-r[0-9]+/,
-    /ffmpeg[0-9]+/,
+    /allegro[@]?[0-9]+/,
+    /arangodb[@]?[0-9]+/,
+    /android-ndk/,
+    /bazel[@]?[0-9]+/,
+    /boost[@]?[0-9]+/,
+    /bootst-python[@]?[0-9]+/,
+    /duplicity[@]?06/,
+    /erlang(@|\-)?r[0-9]+/,
+    /ffmpeg[@]?[0-9]+/,
 ]
 
-debug_skip = true
-
 cmd = ""
-for file_name in Dir["#{tap_dir}/*.rb"]
-    file_without_extension = File.basename(file_name, File.extname(file_name))
+
+puts "Finding formulas through glob: '#{formula_glob}"
+for file_name in Dir[formula_glob]
+    #puts "Matched #{file_name}"
+
+    file_without_extension = shorten_formula.call(file_name)
+    #puts "Tranformed to: #{file_without_extension}"
 
     #if file_without_extension == skip_packages.last
     if file_without_extension == 'ffmpeg28'
@@ -69,11 +91,10 @@ for file_name in Dir["#{tap_dir}/*.rb"]
     
     cmd += "echo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% && "
     cmd += "echo && "
+    cmd += "echo Installing #{file_without_extension} && "
 
     if file_without_extension =~ /automake/
         cmd += "brew link autoconf && "
-    elsif file_without_extension =~ /erlang-r[0-9]+/
-        cmd += "brew link automake autoconf && "
     end
 
     cmd += "brew install #{package_full_name} && "
@@ -82,8 +103,6 @@ for file_name in Dir["#{tap_dir}/*.rb"]
     
     if file_without_extension =~ /automake/
         cmd += "brew unlink autoconf && "
-    elsif file_without_extension =~ /erlang-r[0-9]+/
-        cmd += "brew unlink automake autoconf && "
     end
 end
 
