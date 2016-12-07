@@ -3,37 +3,41 @@ require 'fileutils'
 
 debug_skip = false
 
-
 REPO_SLUG = ENV['TRAVIS_REPO_SLUG']
 puts "REPO_SLUG: #{REPO_SLUG}"
+repo_author, repo_name = REPO_SLUG.split("/")
 
-author, tap_name = REPO_SLUG.split("/")
-tap_short_name = tap_name.split("-")[1..-1].join("-")
-
-tap_cmd = "brew tap #{author}/#{tap_short_name}"
-successful_exit = system(tap_cmd)
-if not successful_exit
-    puts "Cannot tap with cmd: '#{tap_cmd}'"
-    exit 1
-end
-
-tap_dir = "/usr/local/Homebrew/Library/Taps/#{author}/homebrew-#{tap_short_name}"
-puts tap_dir
+tap_short_name = 'versions'
 
 skip_packages_string = ARGV[0]
 
-if tap_short_name == 'versions-fork'
+if repo_name == 'homebrew-versions-reference'
+    tap_author = 'homebrew'
+    tap_dir = "/usr/local/Homebrew/Library/Taps/#{tap_author}/homebrew-#{tap_short_name}"
+    puts tap_dir
+
     skip_packages_string = ARGV[0].gsub("-@", "-").gsub("@", "")
     formula_glob = "#{tap_dir}/*.rb"
     shorten_formula = lambda { |file_name|
         return File.basename(file_name, File.extname(file_name))
     }
-elsif tap_short_name == 'versions'
+elsif repo_name == 'homebrew-versions'
+    tap_author = 'haraldnordgren'
+    tap_dir = "/usr/local/Homebrew/Library/Taps/#{tap_author}/homebrew-#{tap_short_name}"
+    puts tap_dir
+
     skip_packages_string = ARGV[0].gsub("-@", "@")
     formula_glob = "#{tap_dir}/Aliases/*"
     shorten_formula = lambda { |file_name|
         return File.basename(file_name)
     }
+end
+
+tap_cmd = "brew tap #{tap_author}/#{tap_short_name}"
+successful_exit = system(tap_cmd)
+if not successful_exit
+    puts "Cannot tap with cmd: '#{tap_cmd}'"
+    exit 1
 end
 
 skip_packages = skip_packages_string.split(" ")
@@ -49,6 +53,12 @@ timing_out = [
     /erlang(@|\-)?r[0-9]+/,
     /ffmpeg[@]?[0-9]+/,
 ]
+
+# TIMING DATA:
+# ansible19, built in 3 minutes 45 seconds
+# ansible20, built in 4 minutes 59 seconds
+# bison27, built in 2 minutes 14 seconds
+# camlp5-606, 8 minutes
 
 cmd = ""
 
@@ -87,7 +97,7 @@ for file_name in Dir[formula_glob]
         next
     end
 
-    package_full_name = "#{author}/#{tap_short_name}/#{file_without_extension}"
+    package_full_name = "#{tap_author}/#{tap_short_name}/#{file_without_extension}"
     
     cmd += "echo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% && "
     cmd += "echo && "
@@ -99,7 +109,7 @@ for file_name in Dir[formula_glob]
 
     cmd += "brew install #{package_full_name} && "
     cmd += "brew unlink #{package_full_name} && "
-    cmd += "brew uninstall #{package_full_name} && "
+    cmd += "brew uninstall --ignore-dependencies #{package_full_name} && "
     
     if file_without_extension =~ /automake/
         cmd += "brew unlink autoconf && "
