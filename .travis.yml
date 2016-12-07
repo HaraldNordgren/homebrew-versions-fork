@@ -1,0 +1,53 @@
+matrix:
+    include:
+        - os: osx
+          osx_image: xcode8.2
+          env:
+              - SKIP="appledoc@20 appledoc@21 appledoc@22"
+          before_script:
+              - brew unlink automake
+              - brew unlink autoconf
+
+        - os: osx
+          osx_image: xcode8.1
+          env:
+              - SKIP="appledoc@20 appledoc@21 appledoc@22"
+          before_script:
+              - brew unlink automake
+              - brew unlink autoconf
+
+        - os: osx
+          osx_image: xcode8
+          env:
+              - SKIP="appledoc@20 appledoc@21"
+          before_script:
+              - brew unlink automake
+              - brew unlink autoconf
+              - brew untap homebrew/versions
+
+        - os: osx
+          osx_image: xcode7.3
+          env:
+              - SKIP="appledoc@20 appledoc@21"
+          before_script:
+              - brew unlink automake
+              - brew unlink autoconf
+              - brew untap homebrew/versions
+
+        - os: osx
+          osx_image: xcode6.4
+          env:
+              - SKIP="appledoc@20 appledoc@21 camlp5-@606"
+          before_script:
+              - brew unlink automake
+              - brew unlink autoconf
+              - brew untap homebrew/versions
+
+language: ruby
+
+script:
+    - ruby scripts/build_all_formulae.rb "$SKIP"
+
+notifications:
+    email: false
+
