@@ -42,7 +42,7 @@ end
 
 skip_packages = skip_packages_string.split(" ")
 
-timing_out = [
+skip_regexes = [
     /allegro[@]?[0-9]+/,
     /arangodb[@]?[0-9]+/,
     /android-ndk/,
@@ -52,13 +52,22 @@ timing_out = [
     /duplicity[@]?06/,
     /erlang(@|\-)?r[0-9]+/,
     /ffmpeg[@]?[0-9]+/,
+    /cloog-ppl[@]?[0-9]+/,
+
+    # To be removed from migrated repo later
+    /berkeley-db@4/,
+
+    # Skipping because build fails in migrated form
+    /appledoc@22/,
+
 ]
 
 # TIMING DATA:
-# ansible19, built in 3 minutes 45 seconds
-# ansible20, built in 4 minutes 59 seconds
-# bison27, built in 2 minutes 14 seconds
-# camlp5-606, 8 minutes
+# ansible19, built in 5 minutes
+# ansible20, built in 7 minutes
+# bison27, built in 2 minutes
+# camlp5-606, built in 8 minutes
+# cassandra22, built in 5 minutes
 
 cmd = ""
 
@@ -85,7 +94,7 @@ for file_name in Dir[formula_glob]
     end
 
     matched_regex = false
-    for regex in timing_out
+    for regex in skip_regexes
         if file_without_extension =~ regex
             puts "SKIPPING #{file_without_extension} after matching #{regex}"
             matched_regex = true
@@ -107,7 +116,7 @@ for file_name in Dir[formula_glob]
         cmd += "brew link autoconf && "
     end
 
-    cmd += "brew install #{package_full_name} && "
+    cmd += "brew install --verbose #{package_full_name} && "
     cmd += "brew unlink #{package_full_name} && "
     cmd += "brew uninstall --ignore-dependencies #{package_full_name} && "
     
