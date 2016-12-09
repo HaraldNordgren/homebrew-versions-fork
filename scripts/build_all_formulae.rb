@@ -44,11 +44,15 @@ skip_packages = skip_packages_string.split(" ")
 
 skip_regexes = [
     /allegro[@]?[0-9]+/,
+    /ansible[@]?[0-9]+/, # 5 mins, x2
     /arangodb[@]?[0-9]+/,
     /android-ndk/,
     /bazel[@]?[0-9]+/,
     /boost[@]?[0-9]+/,
-    /bootst-python[@]?[0-9]+/,
+    /boost-python[@]?[0-9]+/,
+    /camlp5-606/,
+    /camlp5@606/, # 9 mins
+    /cassandra[@]?22/, # 6 mins (cassandra@21 in seconds!)
     /duplicity[@]?06/,
     /erlang(@|\-)?r[0-9]+/,
     /ffmpeg[@]?[0-9]+/,
@@ -58,7 +62,7 @@ skip_regexes = [
     /berkeley-db@4/,
 
     # Skipping because build fails in migrated form
-    /appledoc@22/,
+    #/appledoc@22/,
 
 ]
 
@@ -69,24 +73,22 @@ skip_regexes = [
 # camlp5-606, built in 8 minutes
 # cassandra22, built in 5 minutes
 
-cmd = ""
+build_job_failed = false
+puts "Finding formulae through glob: '#{formula_glob}"
 
-puts "Finding formulas through glob: '#{formula_glob}"
 for file_name in Dir[formula_glob]
-    #puts "Matched #{file_name}"
-
     file_without_extension = shorten_formula.call(file_name)
-    #puts "Tranformed to: #{file_without_extension}"
 
-    #if file_without_extension == skip_packages.last
-    if file_without_extension == 'ffmpeg28'
-        debug_skip = false
-    end
+    #if file_without_extension == 'ffmpeg28'
+    #    debug_skip = false
+    #end
 
-    if debug_skip
-        puts "SKIPPING AHEAD OVER #{file_without_extension}"
-        next
-    end
+    #if debug_skip
+    #    puts "SKIPPING AHEAD OVER #{file_without_extension}"
+    #    next
+    #end
+
+    puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
     if skip_packages.include?(file_without_extension)
         puts "SKIPPING #{file_without_extension}"
@@ -106,27 +108,43 @@ for file_name in Dir[formula_glob]
         next
     end
 
+    puts "INSTALLING #{file_without_extension}"
+
     package_full_name = "#{tap_author}/#{tap_short_name}/#{file_without_extension}"
-    
-    cmd += "echo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% && "
-    cmd += "echo && "
-    cmd += "echo Installing #{file_without_extension} && "
+
+    log_file = "#{file_without_extension}.log"
+    cmd_list = []
 
     if file_without_extension =~ /automake/
-        cmd += "brew link autoconf && "
+        cmd_list.push("brew link autoconf")
     end
 
-    cmd += "brew install --verbose #{package_full_name} && "
-    cmd += "brew unlink #{package_full_name} && "
-    cmd += "brew uninstall --ignore-dependencies #{package_full_name} && "
-    
+    cmd_list.push("brew install --verbose #{package_full_name}")
+    cmd_list.push("brew unlink #{package_full_name}")
+    cmd_list.push("brew uninstall --ignore-dependencies #{package_full_name}")
+
     if file_without_extension =~ /automake/
-        cmd += "brew unlink autoconf && "
+        cmd_list.push("brew unlink autoconf")
     end
+
+    concatenated_cmd = ""
+    for cmd in cmd_list
+        concatenated_cmd += "#{cmd} >> #{log_file} && "
+    end
+    concatenated_cmd += "true"
+
+    successful_exit = system(concatenated_cmd)
+    if successful_exit
+        puts "Installed #{file_without_extension}"
+        puts open(log_file) {
+            |f| f.grep(/built in/)
+        }
+    else
+        build_job_failed = true
+        puts File.read(log_file)
+    end
+
 end
 
-cmd += "echo ALL BUILDS FINISHED"
-successful_exit = system(cmd)
-
-exit successful_exit ? 0 : 1
+exit build_job_failed ? 1 : 0
 
