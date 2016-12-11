@@ -58,6 +58,8 @@ skip_regexes = [
     /erlang(@|\-)?r[0-9]+/,
     /ffmpeg[@]?[0-9]+/,
     /gcc[@]?[0-9]+/,
+    /kafka[@]?[0-9]+/,
+    /nu[@]?0/,
 
     # To be removed from migrated repo later
     /berkeley-db@4/,
@@ -119,6 +121,16 @@ for file_name in Dir[formula_glob]
 
     if file_without_extension =~ /automake/
         cmd_list.push("brew link autoconf")
+    elsif file_without_extension =~ /gdal[@]?111|influxdb[@]?08|ledger[@]?26|llvm[@]?35/
+        cmd_list.push("brew link autoconf automake")
+    elsif file_without_extension =~ /gnupg[@]?21/
+        cmd_list.push("brew unlink gnupg2 gpg-agent dirmngr")
+    elsif file_without_extension =~ /go[@]?15/
+        cmd_list.push("brew unlink go")
+    elsif file_without_extension =~ /jpeg[@]?gb/
+        cmd_list.push("brew unlink jpeg")
+    elsif file_without_extension =~ /ruby[@]?192/
+        cmd_list.push("brew unlink ruby")
     end
 
     cmd_list.push("brew install --verbose #{package_full_name}")
@@ -127,6 +139,8 @@ for file_name in Dir[formula_glob]
 
     if file_without_extension =~ /automake/
         cmd_list.push("brew unlink autoconf")
+    elsif file_without_extension =~ /gdal[@]?111|influxdb[@]?08|ledger[@]?26|llvm[@]?35/
+        cmd_list.push("brew unlink autoconf automake")
     end
 
     concatenated_cmd = ""
