@@ -1,8 +1,6 @@
 require 'fileutils'
 
 
-debug_skip = false
-
 REPO_SLUG = ENV['TRAVIS_REPO_SLUG']
 puts "REPO_SLUG: #{REPO_SLUG}"
 repo_author, repo_name = REPO_SLUG.split("/")
@@ -35,6 +33,8 @@ end
 
 tap_cmd = "brew tap #{tap_author}/#{tap_short_name}"
 successful_exit = system(tap_cmd)
+puts
+
 if not successful_exit
     puts "Cannot tap with cmd: '#{tap_cmd}'"
     exit 1
@@ -50,20 +50,20 @@ skip_regexes = [
     /bazel[@]?[0-9]+/,
     /boost[@]?[0-9]+/,
     /boost-python[@]?[0-9]+/,
-    /camlp5-606/,
-    /camlp5@606/, # 9 mins
+    /cloog[@]?[0-9]+/, # 6 mins
+    /cloog-ppl[@]?[0-9]+/,
+    /camlp5(-|@)606/, # 9 mins
     /cassandra[@]?22/, # 6 mins (cassandra@21 in seconds!)
     /duplicity[@]?06/,
     /erlang(@|\-)?r[0-9]+/,
     /ffmpeg[@]?[0-9]+/,
-    /cloog-ppl[@]?[0-9]+/,
+    /gcc[@]?[0-9]+/,
 
     # To be removed from migrated repo later
     /berkeley-db@4/,
 
     # Skipping because build fails in migrated form
     #/appledoc@22/,
-
 ]
 
 # TIMING DATA:
@@ -74,24 +74,26 @@ skip_regexes = [
 # cassandra22, built in 5 minutes
 
 build_job_failed = false
+debug_skip = true
+
 puts "Finding formulae through glob: '#{formula_glob}"
+puts
 
 for file_name in Dir[formula_glob]
+    puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     file_without_extension = shorten_formula.call(file_name)
 
-    #if file_without_extension == 'ffmpeg28'
-    #    debug_skip = false
-    #end
+    if file_without_extension =~ /gcc/
+        debug_skip = false
+    end
 
-    #if debug_skip
-    #    puts "SKIPPING AHEAD OVER #{file_without_extension}"
-    #    next
-    #end
-
-    puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+    if debug_skip
+        puts "SKIPPING AHEAD OVER #{file_without_extension}"
+        next
+    end
 
     if skip_packages.include?(file_without_extension)
-        puts "SKIPPING #{file_without_extension}"
+        puts "SKIPPING #{file_without_extension}, incompatible Xcode verson"
         next
     end
 
