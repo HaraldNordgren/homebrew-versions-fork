@@ -1,6 +1,8 @@
 require 'fileutils'
 
 
+start_time = Time.now
+
 REPO_SLUG = ENV['TRAVIS_REPO_SLUG']
 puts "REPO_SLUG: #{REPO_SLUG}"
 repo_author, repo_name = REPO_SLUG.split("/")
@@ -45,23 +47,32 @@ end
 skip_packages = skip_packages_string.split(" ")
 
 skip_regexes = [
-    /allegro[@]?[0-9]+/,
-    /ansible[@]?[0-9]+/, # 5 mins, x2
-    /arangodb[@]?[0-9]+/,
-    /android-ndk/,
-    /bazel[@]?[0-9]+/,
-    /boost[@]?[0-9]+/,
-    /boost-python[@]?[0-9]+/,
-    /cloog[@]?[0-9]+/, # 6 mins
-    /cloog-ppl[@]?[0-9]+/,
-    /camlp5(-|@)606/, # 9 mins
-    /cassandra[@]?22/, # 6 mins (cassandra@21 in seconds!)
-    /duplicity[@]?06/,
-    /erlang(@|\-)?r[0-9]+/,
-    /ffmpeg[@]?[0-9]+/,
-    /gcc[@]?[0-9]+/,
-    /kafka[@]?[0-9]+/,
-    /nu[@]?0/,
+    /^allegro[@]?[0-9]+$/,
+    /^ansible[@]?[0-9]+$/, # 5 mins, x2
+    /^arangodb[@]?[0-9]+$/,
+    /^android-ndk/,
+    /^bazel[@]?[0-9]+$/,
+    /^boost[@]?[0-9]+$/,
+    /^boost-python[@]?[0-9]+$/,
+    /^cloog[@]?[0-9]+$/, # 6 mins
+    /^cloog-ppl[@]?[0-9]+$/,
+    /^camlp5(-|@)606/, # 9 mins
+    /^cassandra[@]?22/, # 6 mins (cassandra@21 in seconds!)
+    /^duplicity[@]?06/,
+    /^erlang(@|\-)?r[0-9]+$/,
+    /^ffmpeg[@]?[0-9]+$/,
+    /^gcc[@]?[0-9]+$/,
+    /^gecode[@]?[0-9]+$/, # 5 mins
+    /^gegl[@]?[0-9]+$/, # 3 mins
+    /^gmp[@]?[0-9]+$/, # 7 mins
+    /^gnuplot[@]?[0-9]+$/, # 2.5 mins
+    /^gsl[@]?[0-9]+$/,
+    /^gst-ffmpeg[@]?[0-9]+$/, # 7.5 mins
+    /^gst-plugins-bad[@]?[0-9]+$/, # 4 mins
+    /^gst-plugins-good[@]?[0-9]+$/, # 5 mins
+    /^imagemagick-ruby[@]?[0-9]+$/, # 4.5 mins
+    /^kafka[@]?[0-9]+$/,
+    /^nu[@]?0/,
 
     # To be removed from migrated repo later
     /berkeley-db@4/,
@@ -84,8 +95,12 @@ failed_jobs = []
 puts "Finding formulae through glob: '#{formula_glob}"
 puts
 
+strf_string = '%-M min %S sec'
+
 for file_name in Dir[formula_glob]
+    puts "Total elapsed time: " + Time.at(Time.now - start_time).utc.strftime(strf_string)
     puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+
     file_without_extension = shorten_formula.call(file_name)
 
     if file_without_extension =~ /gcc/
@@ -167,7 +182,7 @@ for file_name in Dir[formula_glob]
 
     successful_exit = system(concatenated_cmd)
     if successful_exit
-        puts "INSTALLED #{file_without_extension} SUCCESFULLY"
+        puts "INSTALLED #{file_without_extension} SUCCESSFULLY"
         puts open(log_file) {
             |f| f.grep(/built in/)
         }
