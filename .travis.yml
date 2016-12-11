@@ -46,7 +46,7 @@ matrix:
           osx_image: xcode6.4
           env:
               - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 camlp5-@606 gst-plugins-good@010"
+              - SKIP="appledoc@20 appledoc@21 camlp5-@606 gst-plugins-good@010 valgrind@38 qt@52 objective-@caml312"
           before_script:
               - brew unlink automake
               - brew unlink autoconf
