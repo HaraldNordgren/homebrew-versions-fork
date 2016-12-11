@@ -32,7 +32,7 @@ elsif repo_name == 'homebrew-versions'
 end
 
 tap_log_file = "tap.log"
-tap_cmd = "brew tap #{tap_author}/#{tap_short_name} > #{tap_log_file}"
+tap_cmd = "brew tap #{tap_author}/#{tap_short_name} > #{tap_log_file} 2>&1"
 successful_exit = system(tap_cmd)
 puts
 
@@ -79,7 +79,6 @@ skip_regexes = [
 
 debug_skip = true
 
-build_job_failed = false
 failed_jobs = []
 
 puts "Finding formulae through glob: '#{formula_glob}"
@@ -162,22 +161,24 @@ for file_name in Dir[formula_glob]
 
     concatenated_cmd = ""
     for cmd in cmd_list
-        concatenated_cmd += "#{cmd} >> #{log_file} && "
+        concatenated_cmd += "#{cmd} >> #{log_file} 2>&1 && "
     end
     concatenated_cmd += "true"
 
     successful_exit = system(concatenated_cmd)
     if successful_exit
-        puts "Installed #{file_without_extension}"
+        puts "INSTALLED #{file_without_extension} SUCCESFULLY"
         puts open(log_file) {
             |f| f.grep(/built in/)
         }
     else
+        puts "FAILED ON INSTALLING #{file_without_extension}"
         failed_jobs.push(file_without_extension)
-        build_job_failed = true
-        puts File.read(log_file)
     end
 end
+
+puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 
 if failed_jobs.empty?
     exit 0
@@ -185,6 +186,8 @@ else
     puts "FAILED JOBS:"
     for job in failed_jobs
         puts job
+        puts File.read(log_file)
+        puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     end
     exit 1
 end
