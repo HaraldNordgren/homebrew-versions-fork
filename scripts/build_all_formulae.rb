@@ -31,12 +31,14 @@ elsif repo_name == 'homebrew-versions'
     }
 end
 
-tap_cmd = "brew tap #{tap_author}/#{tap_short_name}"
+tap_log_file = "tap.log"
+tap_cmd = "brew tap #{tap_author}/#{tap_short_name} > #{tap_log_file}"
 successful_exit = system(tap_cmd)
 puts
 
 if not successful_exit
     puts "Cannot tap with cmd: '#{tap_cmd}'"
+    puts File.read(tap_log_file)
     exit 1
 end
 
@@ -75,8 +77,10 @@ skip_regexes = [
 # camlp5-606, built in 8 minutes
 # cassandra22, built in 5 minutes
 
-build_job_failed = false
 debug_skip = true
+
+build_job_failed = false
+failed_jobs = []
 
 puts "Finding formulae through glob: '#{formula_glob}"
 puts
@@ -169,11 +173,19 @@ for file_name in Dir[formula_glob]
             |f| f.grep(/built in/)
         }
     else
+        failed_jobs.push(file_without_extension)
         build_job_failed = true
         puts File.read(log_file)
     end
-
 end
 
-exit build_job_failed ? 1 : 0
+if failed_jobs.empty?
+    exit 0
+else
+    puts "FAILED JOBS:"
+    for job in failed_jobs
+        puts job
+    end
+    exit 1
+end
 
