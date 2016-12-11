@@ -4,7 +4,7 @@ matrix:
           osx_image: xcode8.2
           env:
               - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 appledoc@22 gcc@43 gcc@44 gcc@45"
+              - SKIP="appledoc@20 appledoc@21 appledoc@22 gcc@43 gcc@44 gcc@45 kibana@41"
           before_script:
               - brew unlink automake
               - brew unlink autoconf
@@ -14,7 +14,7 @@ matrix:
           osx_image: xcode8.1
           env:
               - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 appledoc@22 gcc@43 gcc@44 gcc@45"
+              - SKIP="appledoc@20 appledoc@21 appledoc@22 gcc@43 gcc@44 gcc@45 kibana@41"
           before_script:
               - brew unlink automake
               - brew unlink autoconf

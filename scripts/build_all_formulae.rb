@@ -68,11 +68,15 @@ skip_regexes = [
     /^gnuplot[@]?[0-9]+$/, # 2.5 mins
     /^gsl[@]?[0-9]+$/,
     /^gst-ffmpeg[@]?[0-9]+$/, # 7.5 mins
-    /^gst-plugins-bad[@]?[0-9]+$/, # 4 mins
-    /^gst-plugins-good[@]?[0-9]+$/, # 5 mins
+    /^gst-plugins-[a-z]+[@]?[0-9]+$/, # 5 mins
+    /^gst-python[@]?[0-9]+$/, # 3 mins
     /^imagemagick-ruby[@]?[0-9]+$/, # 4.5 mins
     /^kafka[@]?[0-9]+$/,
+    /^llvm[@]?[0-9]+$/, # +10 mins
+    #/^log4cplus[@]?[0-9]+$/, # 2 mins
+    /^mkvtoolnix[@]?[0-9]+$/, # 9.5 mins
     /^nu[@]?0/,
+    /^mono[@]?[0-9]+/, # 4 mins
 
     # To be removed from migrated repo later
     /berkeley-db@4/,
@@ -98,12 +102,13 @@ puts
 strf_string = '%-M min %S sec'
 
 for file_name in Dir[formula_glob]
-    puts "Total elapsed time: " + Time.at(Time.now - start_time).utc.strftime(strf_string)
+    puts "Total elapsed time: " + Time.at(Time.now - start_time).
+        utc.strftime(strf_string)
     puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
     file_without_extension = shorten_formula.call(file_name)
 
-    if file_without_extension =~ /gcc/
+    if file_without_extension =~ /maven31/
         debug_skip = false
     end
 
@@ -187,20 +192,21 @@ for file_name in Dir[formula_glob]
             |f| f.grep(/built in/)
         }
     else
-        puts "FAILED ON INSTALLING #{file_without_extension}"
+        puts "FAILED TO INSTALL #{file_without_extension}"
         failed_jobs.push(file_without_extension)
     end
 end
 
+puts
 puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+puts
 
 if failed_jobs.empty?
+    puts "ALL JOBS SUCCEEDED!"
     exit 0
 else
-    puts "FAILED JOBS:"
     for job in failed_jobs
-        puts job
+        puts "FAILED JOB #{job}"
         puts File.read(log_file)
         puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     end
