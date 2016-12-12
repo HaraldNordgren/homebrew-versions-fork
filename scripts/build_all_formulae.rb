@@ -83,6 +83,7 @@ skip_regexes = [
     /^open-mpi[@]?[0-9]+/,
     /^perl[@]?[0-9]+/, # 4-5 mins
     /^ppl[@]?[0-9]+/, # +10 mins
+    /^qt[@]?[0-9]+/, # 5 mins, +10 mins
 
     # To be removed from migrated repo later
     /berkeley-db@4/,
@@ -114,7 +115,7 @@ for file_name in Dir[formula_glob]
 
     file_without_extension = shorten_formula.call(file_name)
 
-    if file_without_extension =~ /ppl011/
+    if file_without_extension =~ /qt55/
         debug_skip = false
     end
 
@@ -188,12 +189,12 @@ for file_name in Dir[formula_glob]
 
     cmd_list.push("echo DONE")
 
-    concatenated_cmd = ""
+    logging_cmds = []
     for cmd in cmd_list
-        concatenated_cmd += "echo [#{cmd}] >> #{log_file} && "
-        concatenated_cmd += "#{cmd} >> #{log_file} 2>&1 && "
+        logging_cmds.push("echo [#{cmd}] >> #{log_file}")
+        logging_cmds.push("#{cmd} >> #{log_file} 2>&1")
     end
-    concatenated_cmd += "true"
+    concatenated_cmd = logging_cmds.join(" && ")
 
     successful_exit = system(concatenated_cmd)
     if successful_exit
@@ -203,7 +204,10 @@ for file_name in Dir[formula_glob]
         }
     else
         puts "FAILED TO INSTALL #{file_without_extension}"
-        failed_jobs.push(file_without_extension)
+        failed_jobs.push({
+            'package' => file_without_extension,
+            'full_cmd' => concatenated_cmd,
+        })
     end
 end
 
@@ -216,7 +220,9 @@ if failed_jobs.empty?
     exit 0
 else
     for job in failed_jobs
-        puts "FAILED JOB #{job}"
+        puts "FAILED JOB #{job['package']}:"
+        puts "FULL COMMAND: #{job['full_cmd']}"
+        puts
         puts File.read(log_file)
         puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     end
