@@ -175,7 +175,8 @@ for file_name in Dir[formula_glob]
 
     cmd_list.push("brew install --verbose #{package_full_name}")
     cmd_list.push("brew unlink #{package_full_name}")
-    cmd_list.push("brew uninstall --ignore-dependencies #{package_full_name}")
+    #cmd_list.push("brew uninstall --ignore-dependencies #{package_full_name}")
+    cmd_list.push("brew uninstall #{package_full_name}")
 
     if file_without_extension =~ /automake/
         cmd_list.push("brew unlink autoconf")
@@ -184,6 +185,8 @@ for file_name in Dir[formula_glob]
     elsif file_without_extension =~ /gdal[@]?111/
         cmd_list.push("brew unlink autoconf automake")
     end
+
+    cmd_list.push("echo DONE")
 
     concatenated_cmd = ""
     for cmd in cmd_list
