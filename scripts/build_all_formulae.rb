@@ -77,6 +77,12 @@ skip_regexes = [
     /^mkvtoolnix[@]?[0-9]+$/, # 9.5 mins
     /^nu[@]?0/,
     /^mono[@]?[0-9]+/, # 4 mins
+    /^mongodb[@]?30/, # +10 mins
+    /^mpfr[@]?2/, #10+ mins
+    /^objective-caml[@]?[0-9]+/, # 8 mins
+    /^open-mpi[@]?[0-9]+/,
+    /^perl[@]?[0-9]+/, # 4-5 mins
+    /^ppl[@]?[0-9]+/, # +10 mins
 
     # To be removed from migrated repo later
     /berkeley-db@4/,
@@ -108,7 +114,7 @@ for file_name in Dir[formula_glob]
 
     file_without_extension = shorten_formula.call(file_name)
 
-    if file_without_extension =~ /maven31/
+    if file_without_extension =~ /ppl011/
         debug_skip = false
     end
 
@@ -181,6 +187,7 @@ for file_name in Dir[formula_glob]
 
     concatenated_cmd = ""
     for cmd in cmd_list
+        concatenated_cmd += "echo [#{cmd}] >> #{log_file} && "
         concatenated_cmd += "#{cmd} >> #{log_file} 2>&1 && "
     end
     concatenated_cmd += "true"
