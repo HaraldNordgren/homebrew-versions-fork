@@ -1,67 +1,14 @@
-matrix:
-    include:
-        - os: osx
-          osx_image: xcode8.2
-          env:
-              - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 appledoc@22 gcc@43 gcc@44 gcc@45 kibana@41"
-          before_script:
-              - brew unlink automake
-              - brew unlink autoconf
-              - brew unlink maven
-
-        - os: osx
-          osx_image: xcode8.1
-          env:
-              - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 appledoc@22 gcc@43 gcc@44 gcc@45 kibana@41"
-          before_script:
-              - brew unlink automake
-              - brew unlink autoconf
-              - brew unlink maven
-
-        - os: osx
-          osx_image: xcode8
-          env:
-              - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 gcc@43 gcc@44 gcc@45"
-          before_script:
-              - brew unlink automake
-              - brew unlink autoconf
-              - brew unlink maven
-              - brew untap homebrew/versions
-
-        - os: osx
-          osx_image: xcode7.3
-          env:
-              - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 gcc@43 gcc@44 gcc@45"
-          before_script:
-              - brew unlink automake
-              - brew unlink autoconf
-              - brew unlink maven
-              - brew untap homebrew/versions
-
-        - os: osx
-          osx_image: xcode6.4
-          env:
-              - HOMEBREW_NO_ANALYTICS=1
-              - SKIP="appledoc@20 appledoc@21 camlp5-@606 gst-plugins-good@010 valgrind@38 qt@52"
-          before_script:
-              - brew unlink automake
-              - brew unlink autoconf
-              - brew unlink maven
-              - brew untap homebrew/versions
-
+---
 language: ruby
-
-script:
-    - ruby scripts/build_all_formulae.rb "$SKIP"
-
 notifications:
-    email: false
-
+  email: false
 branches:
-    only:
-        - master
-
+  only:
+  - master
+os: osx
+osx_image:
+- xcode8.2
+- xcode8
+env: []
+script:
+- ruby scripts/build_formula.rb $FORMULA
