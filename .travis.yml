@@ -11,4 +11,4 @@ matrix:
   - env: FORMULA=build_formula
     osx_image: xcode8.2
 script:
-- ruby scripts/build_formula.rb $FORMULA
+- ruby tests/build_formula.rb $FORMULA
