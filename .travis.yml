@@ -6,10 +6,9 @@ branches:
   only:
   - master
 os: osx
-osx_image:
-- xcode8.2
-- xcode8
-env:
-- FORMULA=build_formula
+matrix:
+  include:
+  - env: FORMULA=build_formula
+    osx_image: xcode8.2
 script:
 - ruby scripts/build_formula.rb $FORMULA
