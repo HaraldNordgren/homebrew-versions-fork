@@ -9,6 +9,7 @@ os: osx
 osx_image:
 - xcode8.2
 - xcode8
-env: []
+env:
+- FORMULA=build_formula
 script:
 - ruby scripts/build_formula.rb $FORMULA
