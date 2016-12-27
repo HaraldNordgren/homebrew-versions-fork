@@ -10,4 +10,8 @@ matrix:
   include:
   - env: FORMULA=build_formula
     osx_image: xcode8.2
-    script: ruby tests/build_formula.rb $FORMULA
+    before_script:
+    - brew unlink automake
+    - brew unlink autoconf
+    - brew unlink maven
+    script: travis_wait 50 ruby tests/build_formula.rb $FORMULA
