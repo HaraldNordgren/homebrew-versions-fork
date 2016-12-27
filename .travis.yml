@@ -18,8 +18,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/allegro4
   - language: ruby
     env: Formula=android-ndk-r11c
@@ -32,8 +30,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r11c
   - language: ruby
     env: Formula=android-ndk-r12b
@@ -46,8 +42,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r12b
   - language: ruby
     env: Formula=ansible19
@@ -60,8 +54,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ansible19
   - language: ruby
     env: Formula=ansible20
@@ -74,8 +66,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ansible20
   - language: ruby
     env: Formula=antlr2
@@ -88,8 +78,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/antlr2
   - language: ruby
     env: Formula=antlr3
@@ -102,8 +90,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/antlr3
   - language: ruby
     env: Formula=apache-spark15
@@ -116,8 +102,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/apache-spark15
   - language: ruby
     env: Formula=apache-spark16
@@ -130,8 +114,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/apache-spark16
   - language: ruby
     env: Formula=appledoc20
@@ -145,8 +127,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc20
   - language: ruby
     env: Formula=appledoc21
@@ -160,8 +140,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc21
   - language: ruby
     env: Formula=appledoc22
@@ -175,8 +153,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc22
   - language: ruby
     env: Formula=arangodb2
@@ -189,8 +165,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/arangodb2
   - language: ruby
     env: Formula=astyle204
@@ -203,8 +177,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/astyle204
   - language: ruby
     env: Formula=autoconf213
@@ -217,8 +189,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/autoconf213
   - language: ruby
     env: Formula=autoconf264
@@ -231,8 +201,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/autoconf264
   - language: ruby
     env: Formula=automake112
@@ -244,8 +212,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/automake112
   - language: ruby
     env: Formula=bash-completion2
@@ -258,8 +224,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bash-completion2
   - language: ruby
     env: Formula=bazel02
@@ -272,8 +236,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bazel02
   - language: ruby
     env: Formula=bind99
@@ -286,8 +248,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bind99
   - language: ruby
     env: Formula=bison27
@@ -300,8 +260,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bison27
   - language: ruby
     env: Formula=boost-python159
@@ -314,8 +272,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost-python159
   - language: ruby
     env: Formula=boost155
@@ -328,8 +284,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
   - language: ruby
     env: Formula=boost159
@@ -342,8 +296,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost159
   - language: ruby
     env: Formula=boost160
@@ -356,8 +308,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
   - language: ruby
     env: Formula=camlp5-606
@@ -370,8 +320,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/camlp5-606
   - language: ruby
     env: Formula=cassandra21
@@ -384,8 +332,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cassandra21
   - language: ruby
     env: Formula=cassandra22
@@ -398,8 +344,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cassandra22
   - language: ruby
     env: Formula=clang-format38
@@ -412,8 +356,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
   - language: ruby
     env: Formula=clojure14
@@ -426,8 +368,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clojure14
   - language: ruby
     env: Formula=cloog-ppl015
@@ -440,8 +380,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog-ppl015
   - language: ruby
     env: Formula=cloog018
@@ -454,8 +392,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
   - language: ruby
     env: Formula=cvsps2
@@ -468,8 +404,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cvsps2
   - language: ruby
     env: Formula=docker111
@@ -482,8 +416,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker111
   - language: ruby
     env: Formula=docker171
@@ -496,8 +428,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
   - language: ruby
     env: Formula=doxygen1831
@@ -510,8 +440,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/doxygen1831
   - language: ruby
     env: Formula=drush4
@@ -524,8 +452,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush4
   - language: ruby
     env: Formula=drush5
@@ -538,8 +464,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
   - language: ruby
     env: Formula=duplicity06
@@ -553,8 +477,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/duplicity06
   - language: ruby
     env: Formula=eigen2
@@ -567,8 +489,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/eigen2
   - language: ruby
     env: Formula=eigen32
@@ -581,8 +501,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/eigen32
   - language: ruby
     env: Formula=erlang-r18
@@ -593,8 +511,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/erlang-r18
   - language: ruby
     env: Formula=erlang-r19
@@ -605,8 +521,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/erlang-r19
   - language: ruby
     env: Formula=ffmpeg28
@@ -619,8 +533,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ffmpeg28
   - language: ruby
     env: Formula=freetds091
@@ -633,8 +545,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
   - language: ruby
     env: Formula=gawk3
@@ -647,8 +557,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gawk3
   - language: ruby
     env: Formula=gcc43
@@ -661,8 +569,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc43
   - language: ruby
     env: Formula=gcc44
@@ -675,8 +581,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc44
   - language: ruby
     env: Formula=gcc45
@@ -689,8 +593,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc45
   - language: ruby
     env: Formula=gcc46
@@ -703,8 +605,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc46
   - language: ruby
     env: Formula=gcc47
@@ -717,8 +617,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc47
   - language: ruby
     env: Formula=gcc48
@@ -731,8 +629,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc48
   - language: ruby
     env: Formula=gcc49
@@ -745,8 +641,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc49
   - language: ruby
     env: Formula=gcc5
@@ -759,8 +653,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc5
   - language: ruby
     env: Formula=gcc6
@@ -774,8 +666,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
   - language: ruby
     env: Formula=gdal111
@@ -787,8 +677,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gdal111
   - language: ruby
     env: Formula=gecode373
@@ -801,8 +689,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gecode373
   - language: ruby
     env: Formula=gegl02
@@ -815,8 +701,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gegl02
   - language: ruby
     env: Formula=giflib5
@@ -829,8 +713,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/giflib5
   - language: ruby
     env: Formula=git-tf-2.0.2
@@ -843,8 +725,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/git-tf-2.0.2
   - language: ruby
     env: Formula=glfw2
@@ -857,8 +737,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/glfw2
   - language: ruby
     env: Formula=gmp4
@@ -871,8 +749,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gmp4
   - language: ruby
     env: Formula=gnupg21
@@ -886,8 +762,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnupg21
   - language: ruby
     env: Formula=gnuplot4
@@ -900,8 +774,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnuplot4
   - language: ruby
     env: Formula=go14
@@ -914,8 +786,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
   - language: ruby
     env: Formula=go15
@@ -929,8 +799,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go15
   - language: ruby
     env: Formula=go16
@@ -943,8 +811,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go16
   - language: ruby
     env: Formula=gradle214
@@ -957,8 +823,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gradle214
   - language: ruby
     env: Formula=grails25
@@ -971,8 +835,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails25
   - language: ruby
     env: Formula=grails31
@@ -985,8 +847,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails31
   - language: ruby
     env: Formula=gsl1
@@ -999,8 +859,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gsl1
   - language: ruby
     env: Formula=gst-ffmpeg010
@@ -1013,8 +871,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-ffmpeg010
   - language: ruby
     env: Formula=gst-plugins-bad010
@@ -1027,8 +883,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-bad010
   - language: ruby
     env: Formula=gst-plugins-base010
@@ -1041,8 +895,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-base010
   - language: ruby
     env: Formula=gst-plugins-good010
@@ -1055,8 +907,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-good010
   - language: ruby
     env: Formula=gst-plugins-ugly010
@@ -1069,8 +919,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-ugly010
   - language: ruby
     env: Formula=gst-python010
@@ -1083,8 +931,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-python010
   - language: ruby
     env: Formula=gst-rtsp010
@@ -1097,8 +943,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-rtsp010
   - language: ruby
     env: Formula=gstreamer010
@@ -1111,8 +955,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gstreamer010
   - language: ruby
     env: Formula=guile18
@@ -1125,8 +967,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/guile18
   - language: ruby
     env: Formula=hadoop121
@@ -1139,8 +979,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop121
   - language: ruby
     env: Formula=hadoop25
@@ -1153,8 +991,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop25
   - language: ruby
     env: Formula=hdf4
@@ -1167,8 +1003,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hdf4
   - language: ruby
     env: Formula=hive011
@@ -1181,8 +1015,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive011
   - language: ruby
     env: Formula=hive12
@@ -1195,8 +1027,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive12
   - language: ruby
     env: Formula=imagemagick-ruby186
@@ -1209,8 +1039,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/imagemagick-ruby186
   - language: ruby
     env: Formula=influxdb08
@@ -1221,8 +1049,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/influxdb08
   - language: ruby
     env: Formula=isl011
@@ -1235,8 +1061,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl011
   - language: ruby
     env: Formula=isl012
@@ -1249,8 +1073,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl012
   - language: ruby
     env: Formula=isl014
@@ -1263,8 +1085,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl014
   - language: ruby
     env: Formula=jboss-as5
@@ -1277,8 +1097,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-as5
   - language: ruby
     env: Formula=jboss-forge1
@@ -1291,8 +1109,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-forge1
   - language: ruby
     env: Formula=jenkins-lts
@@ -1305,8 +1121,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jenkins-lts
   - language: ruby
     env: Formula=jetty76
@@ -1319,8 +1133,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jetty76
   - language: ruby
     env: Formula=jetty8
@@ -1333,8 +1145,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jetty8
   - language: ruby
     env: Formula=jpeg6b
@@ -1348,8 +1158,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jpeg6b
   - language: ruby
     env: Formula=jpeg9
@@ -1362,8 +1170,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jpeg9
   - language: ruby
     env: Formula=jruby1721
@@ -1376,8 +1182,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby1721
   - language: ruby
     env: Formula=jruby9000
@@ -1390,8 +1194,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby9000
   - language: ruby
     env: Formula=json-c010
@@ -1404,8 +1206,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/json-c010
   - language: ruby
     env: Formula=jython253
@@ -1418,8 +1218,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jython253
   - language: ruby
     env: Formula=kafka080
@@ -1432,8 +1230,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
   - language: ruby
     env: Formula=kafka090
@@ -1446,8 +1242,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka090
   - language: ruby
     env: Formula=kettle54
@@ -1460,8 +1254,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kettle54
   - language: ruby
     env: Formula=kibana41
@@ -1474,8 +1266,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kibana41
   - language: ruby
     env: Formula=kibana44
@@ -1488,8 +1278,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kibana44
   - language: ruby
     env: Formula=kubernetes-cli13
@@ -1502,8 +1290,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli13
   - language: ruby
     env: Formula=kubernetes-cli14
@@ -1516,8 +1302,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli14
   - language: ruby
     env: Formula=ledger26
@@ -1528,8 +1312,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
   - language: ruby
     env: Formula=leptonica169
@@ -1542,8 +1324,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/leptonica169
   - language: ruby
     env: Formula=libcouchbase1
@@ -1556,8 +1336,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libcouchbase1
   - language: ruby
     env: Formula=libgee08
@@ -1570,8 +1348,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libgee08
   - language: ruby
     env: Formula=libidn2
@@ -1584,8 +1360,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libidn2
   - language: ruby
     env: Formula=libmongoclient-legacy
@@ -1598,8 +1372,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmongoclient-legacy
   - language: ruby
     env: Formula=libmpc08
@@ -1612,8 +1384,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
   - language: ruby
     env: Formula=libotr4
@@ -1626,8 +1396,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libotr4
   - language: ruby
     env: Formula=libpng12
@@ -1640,8 +1408,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libpng12
   - language: ruby
     env: Formula=libpqxx3
@@ -1654,8 +1420,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libpqxx3
   - language: ruby
     env: Formula=libuv0
@@ -1668,8 +1432,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libuv0
   - language: ruby
     env: Formula=libxc21
@@ -1682,8 +1444,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libxc21
   - language: ruby
     env: Formula=libxml278
@@ -1696,8 +1456,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libxml278
   - language: ruby
     env: Formula=llvm-gcc28
@@ -1710,8 +1468,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm-gcc28
   - language: ruby
     env: Formula=llvm33
@@ -1724,8 +1480,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm33
   - language: ruby
     env: Formula=llvm34
@@ -1738,8 +1492,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm34
   - language: ruby
     env: Formula=llvm35
@@ -1750,8 +1502,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm35
   - language: ruby
     env: Formula=llvm36
@@ -1764,8 +1514,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm36
   - language: ruby
     env: Formula=llvm37
@@ -1778,8 +1526,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm37
   - language: ruby
     env: Formula=llvm38
@@ -1792,8 +1538,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm38
   - language: ruby
     env: Formula=log4cplus10
@@ -1806,8 +1550,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/log4cplus10
   - language: ruby
     env: Formula=logstash24
@@ -1820,8 +1562,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/logstash24
   - language: ruby
     env: Formula=lua53
@@ -1834,8 +1574,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lua53
   - language: ruby
     env: Formula=lz4r117
@@ -1849,8 +1587,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lz4r117
   - language: ruby
     env: Formula=mapnik2
@@ -1863,8 +1599,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
   - language: ruby
     env: Formula=mariadb100
@@ -1877,8 +1611,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mariadb100
   - language: ruby
     env: Formula=maven31
@@ -1891,8 +1623,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/maven31
   - language: ruby
     env: Formula=maven32
@@ -1905,8 +1635,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/maven32
   - language: ruby
     env: Formula=mkvtoolnix58
@@ -1919,8 +1647,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mkvtoolnix58
   - language: ruby
     env: Formula=mongodb30
@@ -1933,8 +1659,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mongodb30
   - language: ruby
     env: Formula=mongodb32
@@ -1947,8 +1671,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mongodb32
   - language: ruby
     env: Formula=mono3
@@ -1961,8 +1683,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mono3
   - language: ruby
     env: Formula=mpfr2
@@ -1975,8 +1695,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
   - language: ruby
     env: Formula=nasm21106
@@ -1989,8 +1707,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nasm21106
   - language: ruby
     env: Formula=nifi021
@@ -2003,8 +1719,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nifi021
   - language: ruby
     env: Formula=nu0
@@ -2017,8 +1731,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nu0
   - language: ruby
     env: Formula=objective-caml312
@@ -2031,8 +1743,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/objective-caml312
   - language: ruby
     env: Formula=open-mpi16
@@ -2045,8 +1755,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
   - language: ruby
     env: Formula=openjpeg20
@@ -2059,8 +1767,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/openjpeg20
   - language: ruby
     env: Formula=openssl101
@@ -2073,8 +1779,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/openssl101
   - language: ruby
     env: Formula=percona-server55
@@ -2087,8 +1791,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/percona-server55
   - language: ruby
     env: Formula=percona-server56
@@ -2101,8 +1803,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/percona-server56
   - language: ruby
     env: Formula=perl514
@@ -2115,8 +1815,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl514
   - language: ruby
     env: Formula=perl516
@@ -2129,8 +1827,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl516
   - language: ruby
     env: Formula=perl518
@@ -2143,8 +1839,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl518
   - language: ruby
     env: Formula=phantomjs192
@@ -2157,8 +1851,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs192
   - language: ruby
     env: Formula=phantomjs198
@@ -2171,8 +1863,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs198
   - language: ruby
     env: Formula=play14
@@ -2185,8 +1875,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
   - language: ruby
     env: Formula=play22
@@ -2199,8 +1887,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play22
   - language: ruby
     env: Formula=postgresql94
@@ -2214,8 +1900,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql94
   - language: ruby
     env: Formula=postgresql95
@@ -2229,8 +1913,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
   - language: ruby
     env: Formula=povray36
@@ -2244,8 +1926,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/povray36
   - language: ruby
     env: Formula=ppl011
@@ -2258,8 +1938,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
   - language: ruby
     env: Formula=ppl10
@@ -2272,8 +1950,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl10
   - language: ruby
     env: Formula=protobuf250
@@ -2286,8 +1962,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf250
   - language: ruby
     env: Formula=protobuf260
@@ -2300,8 +1974,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
   - language: ruby
     env: Formula=rabbitmq30
@@ -2312,8 +1984,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rabbitmq30
   - language: ruby
     env: Formula=raptor1
@@ -2326,8 +1996,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/raptor1
   - language: ruby
     env: Formula=rebar3
@@ -2338,8 +2006,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rebar3
   - language: ruby
     env: Formula=redis1310
@@ -2352,8 +2018,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis1310
   - language: ruby
     env: Formula=redis26
@@ -2366,8 +2030,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis26
   - language: ruby
     env: Formula=redis28
@@ -2380,8 +2042,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis28
   - language: ruby
     env: Formula=riak132
@@ -2392,8 +2052,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/riak132
   - language: ruby
     env: Formula=ruby187
@@ -2406,8 +2064,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby187
   - language: ruby
     env: Formula=ruby192
@@ -2421,8 +2077,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby192
   - language: ruby
     env: Formula=ruby193
@@ -2435,8 +2089,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby193
   - language: ruby
     env: Formula=ruby20
@@ -2449,8 +2101,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby20
   - language: ruby
     env: Formula=ruby21
@@ -2463,8 +2113,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby21
   - language: ruby
     env: Formula=ruby22
@@ -2477,8 +2125,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby22
   - language: ruby
     env: Formula=saxon6
@@ -2491,8 +2137,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/saxon6
   - language: ruby
     env: Formula=scala210
@@ -2505,8 +2149,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala210
   - language: ruby
     env: Formula=scala211
@@ -2519,8 +2161,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala211
   - language: ruby
     env: Formula=selenium-server-standalone245
@@ -2533,8 +2173,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/selenium-server-standalone245
   - language: ruby
     env: Formula=solr54
@@ -2547,8 +2185,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/solr54
   - language: ruby
     env: Formula=solr55
@@ -2561,8 +2197,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/solr55
   - language: ruby
     env: Formula=sonar4
@@ -2575,8 +2209,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/sonar4
   - language: ruby
     env: Formula=spidermonkey45
@@ -2589,8 +2221,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/spidermonkey45
   - language: ruby
     env: Formula=srtp15
@@ -2603,8 +2233,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/srtp15
   - language: ruby
     env: Formula=subversion17
@@ -2617,8 +2245,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion17
   - language: ruby
     env: Formula=subversion18
@@ -2632,8 +2258,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion18
   - language: ruby
     env: Formula=swig2
@@ -2646,8 +2270,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/swig2
   - language: ruby
     env: Formula=swig304
@@ -2660,8 +2282,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/swig304
   - language: ruby
     env: Formula=thrift090
@@ -2672,8 +2292,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/thrift090
   - language: ruby
     env: Formula=unison232
@@ -2686,8 +2304,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/unison232
   - language: ruby
     env: Formula=unison240
@@ -2700,8 +2316,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/unison240
   - language: ruby
     env: Formula=v8-315
@@ -2714,8 +2328,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/v8-315
   - language: ruby
     env: Formula=valgrind38
@@ -2728,8 +2340,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/valgrind38
   - language: ruby
     env: Formula=varnish3
@@ -2742,8 +2352,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/varnish3
   - language: ruby
     env: Formula=varnish4
@@ -2756,8 +2364,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/varnish4
   - language: ruby
     env: Formula=vim74
@@ -2770,8 +2376,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/vim74
   - language: ruby
     env: Formula=virtuoso616
@@ -2784,8 +2388,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/virtuoso616
   - language: ruby
     env: Formula=zeromq32
@@ -2798,8 +2400,6 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq32
   - language: ruby
     env: Formula=zeromq40
@@ -2812,6 +2412,4 @@ matrix:
     - brew untap homebrew/versions
     - brew tap homebrew/versions
     - brew update
-    - brew update
-    - brew doctor
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
