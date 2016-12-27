@@ -1,14 +1,14 @@
 ---
-language: ruby
 notifications:
   email: false
 branches:
   only:
   - master
-os: osx
 matrix:
   include:
-  - env: FORMULA=build_formula
+  - language: ruby
+    env: FORMULA=build_formula
+    os: osx
     osx_image: xcode8.2
     before_script:
     - brew unlink automake
