@@ -26,9 +26,15 @@ if successful_exit
         |f| f.grep(/built in/)
     }
     exit 0
-else
-    puts "FAILED TO INSTALL #{package_full_name}"
-    puts
-    puts File.read(log_file)
-    exit 1
+
+puts "FAILED TO INSTALL #{package_full_name}"
+puts
+
+log_output = File.read(log_file)
+
+if log_output.grep(Regexp.quote("https://git.io/brew-troubleshooting")).size > 0
+    system("brew gist-logs #{package_full_name}")
 end
+
+puts log_output
+exit 1
