@@ -1,8 +1,6 @@
 require 'fileutils'
 
 
-start_time = Time.now
-
 package_full_name = ARGV[0]
 puts "INSTALLING #{package_full_name}"
 
@@ -26,6 +24,7 @@ if successful_exit
         |f| f.grep(/built in/)
     }
     exit 0
+end
 
 puts "FAILED TO INSTALL #{package_full_name}"
 puts
