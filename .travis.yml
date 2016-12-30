@@ -8,20 +8,6 @@ branches:
   - master
 matrix:
   include:
-  - env: Formula=android-ndk-r11c
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r11c
-  - env: Formula=android-ndk-r12b
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r12b
   - env: Formula=ansible19
     os: osx
     osx_image: xcode8.2
@@ -64,29 +50,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/apache-spark16
-  - env: Formula=appledoc22
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc22
-  - env: Formula=arangodb2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/arangodb2
-  - env: Formula=astyle204
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/astyle204
   - env: Formula=autoconf213
     os: osx
     osx_image: xcode8.2
@@ -125,13 +88,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bazel02
-  - env: Formula=bind99
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bind99
   - env: Formula=bison27
     os: osx
     osx_image: xcode8.2
@@ -167,13 +123,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
-  - env: Formula=camlp5-606
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/camlp5-606
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode8.2
@@ -195,13 +144,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=clojure14
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clojure14
   - env: Formula=cloog-ppl015
     os: osx
     osx_image: xcode8.2
@@ -216,13 +158,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
-  - env: Formula=cvsps2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cvsps2
   - env: Formula=docker111
     os: osx
     osx_image: xcode8.2
@@ -237,20 +172,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=doxygen1831
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/doxygen1831
-  - env: Formula=drush4
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush4
   - env: Formula=drush5
     os: osx
     osx_image: xcode8.2
@@ -258,21 +179,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
-  - env: Formula=duplicity06
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - pip install testrepository
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/duplicity06
-  - env: Formula=eigen2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/eigen2
   - env: Formula=eigen32
     os: osx
     osx_image: xcode8.2
@@ -308,13 +214,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gawk3
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gawk3
   - env: Formula=gcc6
     os: osx
     osx_image: xcode8.2
@@ -323,28 +222,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
-  - env: Formula=gdal111
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew unlink gdal
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gdal111
-  - env: Formula=gecode373
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gecode373
-  - env: Formula=gegl02
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gegl02
   - env: Formula=giflib5
     os: osx
     osx_image: xcode8.2
@@ -352,13 +229,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/giflib5
-  - env: Formula=git-tf-2.0.2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/git-tf-2.0.2
   - env: Formula=glfw2
     os: osx
     osx_image: xcode8.2
@@ -417,13 +287,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails25
-  - env: Formula=grails31
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails31
   - env: Formula=gsl1
     os: osx
     osx_image: xcode8.2
@@ -466,20 +329,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-ugly010
-  - env: Formula=gst-python010
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-python010
-  - env: Formula=gst-rtsp010
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-rtsp010
   - env: Formula=gstreamer010
     os: osx
     osx_image: xcode8.2
@@ -487,27 +336,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gstreamer010
-  - env: Formula=guile18
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/guile18
-  - env: Formula=hadoop121
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop121
-  - env: Formula=hadoop25
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop25
   - env: Formula=hdf4
     os: osx
     osx_image: xcode8.2
@@ -515,20 +343,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hdf4
-  - env: Formula=hive011
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive011
-  - env: Formula=hive12
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive12
   - env: Formula=influxdb08
     os: osx
     osx_image: xcode8.2
@@ -564,13 +378,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-as5
-  - env: Formula=jboss-forge1
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-forge1
   - env: Formula=jenkins-lts
     os: osx
     osx_image: xcode8.2
@@ -578,13 +385,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jenkins-lts
-  - env: Formula=jetty76
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jetty76
   - env: Formula=jetty8
     os: osx
     osx_image: xcode8.2
@@ -607,34 +407,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jpeg9
-  - env: Formula=jruby1721
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby1721
-  - env: Formula=jruby9000
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby9000
-  - env: Formula=json-c010
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/json-c010
-  - env: Formula=jython253
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jython253
   - env: Formula=kafka080
     os: osx
     osx_image: xcode8.2
@@ -643,21 +415,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
-  - env: Formula=kafka090
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew cask install java
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka090
-  - env: Formula=kettle54
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kettle54
   - env: Formula=kibana41
     os: osx
     osx_image: xcode8.2
@@ -679,13 +436,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli13
-  - env: Formula=kubernetes-cli14
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli14
   - env: Formula=ledger26
     os: osx
     osx_image: xcode8.2
@@ -693,41 +443,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=leptonica169
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/leptonica169
-  - env: Formula=libcouchbase1
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libcouchbase1
-  - env: Formula=libgee08
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libgee08
-  - env: Formula=libidn2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libidn2
-  - env: Formula=libmongoclient-legacy
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmongoclient-legacy
   - env: Formula=libmpc08
     os: osx
     osx_image: xcode8.2
@@ -735,13 +450,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
-  - env: Formula=libotr4
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libotr4
   - env: Formula=libpng12
     os: osx
     osx_image: xcode8.2
@@ -756,20 +464,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libpqxx3
-  - env: Formula=libuv0
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libuv0
-  - env: Formula=libxc21
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libxc21
   - env: Formula=libxml278
     os: osx
     osx_image: xcode8.2
@@ -805,13 +499,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm38
-  - env: Formula=log4cplus10
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/log4cplus10
   - env: Formula=logstash24
     os: osx
     osx_image: xcode8.2
@@ -826,20 +513,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lua53
-  - env: Formula=lz4r117
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lz4r117
-  - env: Formula=mapnik2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
   - env: Formula=mariadb100
     os: osx
     osx_image: xcode8.2
@@ -863,13 +536,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/maven32
-  - env: Formula=mkvtoolnix58
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mkvtoolnix58
   - env: Formula=mongodb30
     os: osx
     osx_image: xcode8.2
@@ -898,27 +564,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
-  - env: Formula=nasm21106
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nasm21106
-  - env: Formula=nifi021
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nifi021
-  - env: Formula=objective-caml312
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/objective-caml312
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode8.2
@@ -927,13 +572,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
-  - env: Formula=openjpeg20
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/openjpeg20
   - env: Formula=openssl101
     os: osx
     osx_image: xcode8.2
@@ -962,13 +600,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl514
-  - env: Formula=perl516
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl516
   - env: Formula=perl518
     os: osx
     osx_image: xcode8.2
@@ -990,13 +621,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=play22
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play22
   - env: Formula=postgresql94
     os: osx
     osx_image: xcode8.2
@@ -1013,14 +637,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=povray36
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew unlink libpng
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/povray36
   - env: Formula=ppl011
     os: osx
     osx_image: xcode8.2
@@ -1028,13 +644,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
-  - env: Formula=ppl10
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl10
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode8.2
@@ -1049,20 +658,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
-  - env: Formula=rabbitmq30
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rabbitmq30
-  - env: Formula=raptor1
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/raptor1
   - env: Formula=rebar3
     os: osx
     osx_image: xcode8.2
@@ -1091,13 +686,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis28
-  - env: Formula=riak132
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/riak132
   - env: Formula=ruby187
     os: osx
     osx_image: xcode8.2
@@ -1105,13 +693,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby187
-  - env: Formula=ruby192
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby192
   - env: Formula=ruby193
     os: osx
     osx_image: xcode8.2
@@ -1140,13 +721,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby22
-  - env: Formula=saxon6
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/saxon6
   - env: Formula=scala210
     os: osx
     osx_image: xcode8.2
@@ -1154,13 +728,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala210
-  - env: Formula=scala211
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala211
   - env: Formula=selenium-server-standalone245
     os: osx
     osx_image: xcode8.2
@@ -1182,20 +749,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/solr55
-  - env: Formula=sonar4
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/sonar4
-  - env: Formula=spidermonkey45
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/spidermonkey45
   - env: Formula=srtp15
     os: osx
     osx_image: xcode8.2
@@ -1231,13 +784,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/thrift090
-  - env: Formula=unison232
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/unison232
   - env: Formula=unison240
     os: osx
     osx_image: xcode8.2
@@ -1252,13 +798,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/v8-315
-  - env: Formula=varnish3
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/varnish3
   - env: Formula=varnish4
     os: osx
     osx_image: xcode8.2
@@ -1273,13 +812,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/vim74
-  - env: Formula=virtuoso616
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/virtuoso616
   - env: Formula=zeromq32
     os: osx
     osx_image: xcode8.2
@@ -1294,20 +826,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=android-ndk-r11c
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r11c
-  - env: Formula=android-ndk-r12b
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r12b
   - env: Formula=ansible19
     os: osx
     osx_image: xcode8.1
@@ -1350,47 +868,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/apache-spark16
-  - env: Formula=appledoc20
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc20
-  - env: Formula=appledoc21
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc21
-  - env: Formula=appledoc22
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc22
-  - env: Formula=arangodb2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/arangodb2
-  - env: Formula=astyle204
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/astyle204
   - env: Formula=autoconf213
     os: osx
     osx_image: xcode8.1
@@ -1429,13 +906,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bazel02
-  - env: Formula=bind99
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bind99
   - env: Formula=bison27
     os: osx
     osx_image: xcode8.1
@@ -1471,13 +941,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
-  - env: Formula=camlp5-606
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/camlp5-606
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode8.1
@@ -1499,13 +962,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=clojure14
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clojure14
   - env: Formula=cloog-ppl015
     os: osx
     osx_image: xcode8.1
@@ -1520,13 +976,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
-  - env: Formula=cvsps2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cvsps2
   - env: Formula=docker111
     os: osx
     osx_image: xcode8.1
@@ -1541,20 +990,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=doxygen1831
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/doxygen1831
-  - env: Formula=drush4
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush4
   - env: Formula=drush5
     os: osx
     osx_image: xcode8.1
@@ -1562,21 +997,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
-  - env: Formula=duplicity06
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - pip install testrepository
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/duplicity06
-  - env: Formula=eigen2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/eigen2
   - env: Formula=eigen32
     os: osx
     osx_image: xcode8.1
@@ -1612,13 +1032,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gawk3
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gawk3
   - env: Formula=gcc6
     os: osx
     osx_image: xcode8.1
@@ -1627,28 +1040,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
-  - env: Formula=gdal111
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew unlink gdal
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gdal111
-  - env: Formula=gecode373
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gecode373
-  - env: Formula=gegl02
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gegl02
   - env: Formula=giflib5
     os: osx
     osx_image: xcode8.1
@@ -1656,13 +1047,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/giflib5
-  - env: Formula=git-tf-2.0.2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/git-tf-2.0.2
   - env: Formula=glfw2
     os: osx
     osx_image: xcode8.1
@@ -1721,13 +1105,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails25
-  - env: Formula=grails31
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails31
   - env: Formula=gsl1
     os: osx
     osx_image: xcode8.1
@@ -1770,20 +1147,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-ugly010
-  - env: Formula=gst-python010
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-python010
-  - env: Formula=gst-rtsp010
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-rtsp010
   - env: Formula=gstreamer010
     os: osx
     osx_image: xcode8.1
@@ -1791,27 +1154,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gstreamer010
-  - env: Formula=guile18
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/guile18
-  - env: Formula=hadoop121
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop121
-  - env: Formula=hadoop25
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop25
   - env: Formula=hdf4
     os: osx
     osx_image: xcode8.1
@@ -1819,20 +1161,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hdf4
-  - env: Formula=hive011
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive011
-  - env: Formula=hive12
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive12
   - env: Formula=influxdb08
     os: osx
     osx_image: xcode8.1
@@ -1868,13 +1196,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-as5
-  - env: Formula=jboss-forge1
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-forge1
   - env: Formula=jenkins-lts
     os: osx
     osx_image: xcode8.1
@@ -1882,13 +1203,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jenkins-lts
-  - env: Formula=jetty76
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jetty76
   - env: Formula=jetty8
     os: osx
     osx_image: xcode8.1
@@ -1911,34 +1225,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jpeg9
-  - env: Formula=jruby1721
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby1721
-  - env: Formula=jruby9000
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby9000
-  - env: Formula=json-c010
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/json-c010
-  - env: Formula=jython253
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jython253
   - env: Formula=kafka080
     os: osx
     osx_image: xcode8.1
@@ -1947,21 +1233,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
-  - env: Formula=kafka090
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew cask install java
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka090
-  - env: Formula=kettle54
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kettle54
   - env: Formula=kibana41
     os: osx
     osx_image: xcode8.1
@@ -1983,13 +1254,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli13
-  - env: Formula=kubernetes-cli14
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli14
   - env: Formula=ledger26
     os: osx
     osx_image: xcode8.1
@@ -1997,41 +1261,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=leptonica169
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/leptonica169
-  - env: Formula=libcouchbase1
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libcouchbase1
-  - env: Formula=libgee08
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libgee08
-  - env: Formula=libidn2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libidn2
-  - env: Formula=libmongoclient-legacy
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmongoclient-legacy
   - env: Formula=libmpc08
     os: osx
     osx_image: xcode8.1
@@ -2039,13 +1268,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
-  - env: Formula=libotr4
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libotr4
   - env: Formula=libpng12
     os: osx
     osx_image: xcode8.1
@@ -2060,20 +1282,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libpqxx3
-  - env: Formula=libuv0
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libuv0
-  - env: Formula=libxc21
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libxc21
   - env: Formula=libxml278
     os: osx
     osx_image: xcode8.1
@@ -2109,13 +1317,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm38
-  - env: Formula=log4cplus10
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/log4cplus10
   - env: Formula=logstash24
     os: osx
     osx_image: xcode8.1
@@ -2130,20 +1331,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lua53
-  - env: Formula=lz4r117
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lz4r117
-  - env: Formula=mapnik2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
   - env: Formula=mariadb100
     os: osx
     osx_image: xcode8.1
@@ -2167,13 +1354,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/maven32
-  - env: Formula=mkvtoolnix58
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mkvtoolnix58
   - env: Formula=mongodb30
     os: osx
     osx_image: xcode8.1
@@ -2202,34 +1382,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
-  - env: Formula=nasm21106
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nasm21106
-  - env: Formula=nifi021
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nifi021
-  - env: Formula=nu0
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nu0
-  - env: Formula=objective-caml312
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/objective-caml312
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode8.1
@@ -2238,13 +1390,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
-  - env: Formula=openjpeg20
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/openjpeg20
   - env: Formula=openssl101
     os: osx
     osx_image: xcode8.1
@@ -2273,13 +1418,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl514
-  - env: Formula=perl516
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl516
   - env: Formula=perl518
     os: osx
     osx_image: xcode8.1
@@ -2308,13 +1446,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=play22
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play22
   - env: Formula=postgresql94
     os: osx
     osx_image: xcode8.1
@@ -2331,14 +1462,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=povray36
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew unlink libpng
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/povray36
   - env: Formula=ppl011
     os: osx
     osx_image: xcode8.1
@@ -2346,13 +1469,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
-  - env: Formula=ppl10
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl10
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode8.1
@@ -2367,20 +1483,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
-  - env: Formula=rabbitmq30
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rabbitmq30
-  - env: Formula=raptor1
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/raptor1
   - env: Formula=rebar3
     os: osx
     osx_image: xcode8.1
@@ -2409,13 +1511,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis28
-  - env: Formula=riak132
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/riak132
   - env: Formula=ruby187
     os: osx
     osx_image: xcode8.1
@@ -2423,13 +1518,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby187
-  - env: Formula=ruby192
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby192
   - env: Formula=ruby193
     os: osx
     osx_image: xcode8.1
@@ -2458,13 +1546,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby22
-  - env: Formula=saxon6
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/saxon6
   - env: Formula=scala210
     os: osx
     osx_image: xcode8.1
@@ -2472,13 +1553,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala210
-  - env: Formula=scala211
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala211
   - env: Formula=selenium-server-standalone245
     os: osx
     osx_image: xcode8.1
@@ -2500,20 +1574,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/solr55
-  - env: Formula=sonar4
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/sonar4
-  - env: Formula=spidermonkey45
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/spidermonkey45
   - env: Formula=srtp15
     os: osx
     osx_image: xcode8.1
@@ -2521,13 +1581,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/srtp15
-  - env: Formula=subversion17
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion17
   - env: Formula=subversion18
     os: osx
     osx_image: xcode8.1
@@ -2556,13 +1609,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/thrift090
-  - env: Formula=unison232
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/unison232
   - env: Formula=unison240
     os: osx
     osx_image: xcode8.1
@@ -2577,20 +1623,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/v8-315
-  - env: Formula=valgrind38
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/valgrind38
-  - env: Formula=varnish3
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/varnish3
   - env: Formula=varnish4
     os: osx
     osx_image: xcode8.1
@@ -2605,13 +1637,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/vim74
-  - env: Formula=virtuoso616
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/virtuoso616
   - env: Formula=zeromq32
     os: osx
     osx_image: xcode8.1
@@ -2626,27 +1651,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=allegro4
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/allegro4
-  - env: Formula=android-ndk-r11c
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r11c
-  - env: Formula=android-ndk-r12b
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r12b
   - env: Formula=ansible19
     os: osx
     osx_image: xcode8
@@ -2689,47 +1693,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/apache-spark16
-  - env: Formula=appledoc20
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc20
-  - env: Formula=appledoc21
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc21
-  - env: Formula=appledoc22
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc22
-  - env: Formula=arangodb2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/arangodb2
-  - env: Formula=astyle204
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/astyle204
   - env: Formula=autoconf213
     os: osx
     osx_image: xcode8
@@ -2768,13 +1731,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bazel02
-  - env: Formula=bind99
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bind99
   - env: Formula=bison27
     os: osx
     osx_image: xcode8
@@ -2810,13 +1766,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
-  - env: Formula=camlp5-606
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/camlp5-606
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode8
@@ -2838,13 +1787,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=clojure14
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clojure14
   - env: Formula=cloog-ppl015
     os: osx
     osx_image: xcode8
@@ -2859,13 +1801,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
-  - env: Formula=cvsps2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cvsps2
   - env: Formula=docker111
     os: osx
     osx_image: xcode8
@@ -2880,20 +1815,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=doxygen1831
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/doxygen1831
-  - env: Formula=drush4
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush4
   - env: Formula=drush5
     os: osx
     osx_image: xcode8
@@ -2901,21 +1822,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
-  - env: Formula=duplicity06
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - pip install testrepository
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/duplicity06
-  - env: Formula=eigen2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/eigen2
   - env: Formula=eigen32
     os: osx
     osx_image: xcode8
@@ -2951,20 +1857,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gawk3
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gawk3
-  - env: Formula=gcc43
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc43
   - env: Formula=gcc44
     os: osx
     osx_image: xcode8
@@ -3022,28 +1914,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
-  - env: Formula=gdal111
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew unlink gdal
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gdal111
-  - env: Formula=gecode373
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gecode373
-  - env: Formula=gegl02
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gegl02
   - env: Formula=giflib5
     os: osx
     osx_image: xcode8
@@ -3051,13 +1921,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/giflib5
-  - env: Formula=git-tf-2.0.2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/git-tf-2.0.2
   - env: Formula=glfw2
     os: osx
     osx_image: xcode8
@@ -3123,13 +1986,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails25
-  - env: Formula=grails31
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails31
   - env: Formula=gsl1
     os: osx
     osx_image: xcode8
@@ -3172,20 +2028,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-ugly010
-  - env: Formula=gst-python010
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-python010
-  - env: Formula=gst-rtsp010
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-rtsp010
   - env: Formula=gstreamer010
     os: osx
     osx_image: xcode8
@@ -3193,27 +2035,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gstreamer010
-  - env: Formula=guile18
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/guile18
-  - env: Formula=hadoop121
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop121
-  - env: Formula=hadoop25
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop25
   - env: Formula=hdf4
     os: osx
     osx_image: xcode8
@@ -3221,20 +2042,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hdf4
-  - env: Formula=hive011
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive011
-  - env: Formula=hive12
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive12
   - env: Formula=imagemagick-ruby186
     os: osx
     osx_image: xcode8
@@ -3277,13 +2084,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-as5
-  - env: Formula=jboss-forge1
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-forge1
   - env: Formula=jenkins-lts
     os: osx
     osx_image: xcode8
@@ -3291,13 +2091,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jenkins-lts
-  - env: Formula=jetty76
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jetty76
   - env: Formula=jetty8
     os: osx
     osx_image: xcode8
@@ -3320,34 +2113,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jpeg9
-  - env: Formula=jruby1721
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby1721
-  - env: Formula=jruby9000
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby9000
-  - env: Formula=json-c010
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/json-c010
-  - env: Formula=jython253
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jython253
   - env: Formula=kafka080
     os: osx
     osx_image: xcode8
@@ -3356,21 +2121,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
-  - env: Formula=kafka090
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew cask install java
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka090
-  - env: Formula=kettle54
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kettle54
   - env: Formula=kibana41
     os: osx
     osx_image: xcode8
@@ -3392,13 +2142,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli13
-  - env: Formula=kubernetes-cli14
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli14
   - env: Formula=ledger26
     os: osx
     osx_image: xcode8
@@ -3406,41 +2149,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=leptonica169
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/leptonica169
-  - env: Formula=libcouchbase1
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libcouchbase1
-  - env: Formula=libgee08
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libgee08
-  - env: Formula=libidn2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libidn2
-  - env: Formula=libmongoclient-legacy
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmongoclient-legacy
   - env: Formula=libmpc08
     os: osx
     osx_image: xcode8
@@ -3448,13 +2156,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
-  - env: Formula=libotr4
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libotr4
   - env: Formula=libpng12
     os: osx
     osx_image: xcode8
@@ -3469,20 +2170,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libpqxx3
-  - env: Formula=libuv0
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libuv0
-  - env: Formula=libxc21
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libxc21
   - env: Formula=libxml278
     os: osx
     osx_image: xcode8
@@ -3539,13 +2226,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm38
-  - env: Formula=log4cplus10
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/log4cplus10
   - env: Formula=logstash24
     os: osx
     osx_image: xcode8
@@ -3560,20 +2240,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lua53
-  - env: Formula=lz4r117
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lz4r117
-  - env: Formula=mapnik2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
   - env: Formula=mariadb100
     os: osx
     osx_image: xcode8
@@ -3597,13 +2263,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/maven32
-  - env: Formula=mkvtoolnix58
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mkvtoolnix58
   - env: Formula=mongodb30
     os: osx
     osx_image: xcode8
@@ -3632,34 +2291,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
-  - env: Formula=nasm21106
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nasm21106
-  - env: Formula=nifi021
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nifi021
-  - env: Formula=nu0
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nu0
-  - env: Formula=objective-caml312
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/objective-caml312
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode8
@@ -3668,13 +2299,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
-  - env: Formula=openjpeg20
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/openjpeg20
   - env: Formula=openssl101
     os: osx
     osx_image: xcode8
@@ -3703,13 +2327,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl514
-  - env: Formula=perl516
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl516
   - env: Formula=perl518
     os: osx
     osx_image: xcode8
@@ -3738,13 +2355,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=play22
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play22
   - env: Formula=postgresql94
     os: osx
     osx_image: xcode8
@@ -3761,14 +2371,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=povray36
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew unlink libpng
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/povray36
   - env: Formula=ppl011
     os: osx
     osx_image: xcode8
@@ -3776,13 +2378,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
-  - env: Formula=ppl10
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl10
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode8
@@ -3797,20 +2392,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
-  - env: Formula=rabbitmq30
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rabbitmq30
-  - env: Formula=raptor1
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/raptor1
   - env: Formula=rebar3
     os: osx
     osx_image: xcode8
@@ -3839,13 +2420,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis28
-  - env: Formula=riak132
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/riak132
   - env: Formula=ruby187
     os: osx
     osx_image: xcode8
@@ -3853,13 +2427,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby187
-  - env: Formula=ruby192
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby192
   - env: Formula=ruby193
     os: osx
     osx_image: xcode8
@@ -3888,13 +2455,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby22
-  - env: Formula=saxon6
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/saxon6
   - env: Formula=scala210
     os: osx
     osx_image: xcode8
@@ -3902,13 +2462,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala210
-  - env: Formula=scala211
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala211
   - env: Formula=selenium-server-standalone245
     os: osx
     osx_image: xcode8
@@ -3930,20 +2483,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/solr55
-  - env: Formula=sonar4
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/sonar4
-  - env: Formula=spidermonkey45
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/spidermonkey45
   - env: Formula=srtp15
     os: osx
     osx_image: xcode8
@@ -3951,13 +2490,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/srtp15
-  - env: Formula=subversion17
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion17
   - env: Formula=subversion18
     os: osx
     osx_image: xcode8
@@ -3986,13 +2518,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/thrift090
-  - env: Formula=unison232
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/unison232
   - env: Formula=unison240
     os: osx
     osx_image: xcode8
@@ -4007,20 +2532,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/v8-315
-  - env: Formula=valgrind38
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/valgrind38
-  - env: Formula=varnish3
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/varnish3
   - env: Formula=varnish4
     os: osx
     osx_image: xcode8
@@ -4035,13 +2546,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/vim74
-  - env: Formula=virtuoso616
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/virtuoso616
   - env: Formula=zeromq32
     os: osx
     osx_image: xcode8
@@ -4056,27 +2560,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=allegro4
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/allegro4
-  - env: Formula=android-ndk-r11c
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r11c
-  - env: Formula=android-ndk-r12b
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r12b
   - env: Formula=ansible19
     os: osx
     osx_image: xcode7.3
@@ -4119,47 +2602,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/apache-spark16
-  - env: Formula=appledoc20
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc20
-  - env: Formula=appledoc21
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc21
-  - env: Formula=appledoc22
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc22
-  - env: Formula=arangodb2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/arangodb2
-  - env: Formula=astyle204
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/astyle204
   - env: Formula=autoconf213
     os: osx
     osx_image: xcode7.3
@@ -4198,13 +2640,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bazel02
-  - env: Formula=bind99
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bind99
   - env: Formula=bison27
     os: osx
     osx_image: xcode7.3
@@ -4240,13 +2675,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
-  - env: Formula=camlp5-606
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/camlp5-606
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode7.3
@@ -4268,13 +2696,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=clojure14
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clojure14
   - env: Formula=cloog-ppl015
     os: osx
     osx_image: xcode7.3
@@ -4289,13 +2710,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
-  - env: Formula=cvsps2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cvsps2
   - env: Formula=docker111
     os: osx
     osx_image: xcode7.3
@@ -4310,20 +2724,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=doxygen1831
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/doxygen1831
-  - env: Formula=drush4
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush4
   - env: Formula=drush5
     os: osx
     osx_image: xcode7.3
@@ -4331,21 +2731,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
-  - env: Formula=duplicity06
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - pip install testrepository
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/duplicity06
-  - env: Formula=eigen2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/eigen2
   - env: Formula=eigen32
     os: osx
     osx_image: xcode7.3
@@ -4381,20 +2766,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gawk3
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gawk3
-  - env: Formula=gcc43
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc43
   - env: Formula=gcc44
     os: osx
     osx_image: xcode7.3
@@ -4452,28 +2823,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
-  - env: Formula=gdal111
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew unlink gdal
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gdal111
-  - env: Formula=gecode373
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gecode373
-  - env: Formula=gegl02
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gegl02
   - env: Formula=giflib5
     os: osx
     osx_image: xcode7.3
@@ -4481,13 +2830,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/giflib5
-  - env: Formula=git-tf-2.0.2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/git-tf-2.0.2
   - env: Formula=glfw2
     os: osx
     osx_image: xcode7.3
@@ -4553,13 +2895,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails25
-  - env: Formula=grails31
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails31
   - env: Formula=gsl1
     os: osx
     osx_image: xcode7.3
@@ -4602,20 +2937,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-ugly010
-  - env: Formula=gst-python010
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-python010
-  - env: Formula=gst-rtsp010
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-rtsp010
   - env: Formula=gstreamer010
     os: osx
     osx_image: xcode7.3
@@ -4623,27 +2944,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gstreamer010
-  - env: Formula=guile18
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/guile18
-  - env: Formula=hadoop121
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop121
-  - env: Formula=hadoop25
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop25
   - env: Formula=hdf4
     os: osx
     osx_image: xcode7.3
@@ -4651,20 +2951,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hdf4
-  - env: Formula=hive011
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive011
-  - env: Formula=hive12
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive12
   - env: Formula=imagemagick-ruby186
     os: osx
     osx_image: xcode7.3
@@ -4707,13 +2993,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-as5
-  - env: Formula=jboss-forge1
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-forge1
   - env: Formula=jenkins-lts
     os: osx
     osx_image: xcode7.3
@@ -4721,13 +3000,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jenkins-lts
-  - env: Formula=jetty76
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jetty76
   - env: Formula=jetty8
     os: osx
     osx_image: xcode7.3
@@ -4750,34 +3022,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jpeg9
-  - env: Formula=jruby1721
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby1721
-  - env: Formula=jruby9000
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby9000
-  - env: Formula=json-c010
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/json-c010
-  - env: Formula=jython253
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jython253
   - env: Formula=kafka080
     os: osx
     osx_image: xcode7.3
@@ -4786,21 +3030,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
-  - env: Formula=kafka090
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew cask install java
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka090
-  - env: Formula=kettle54
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kettle54
   - env: Formula=kibana41
     os: osx
     osx_image: xcode7.3
@@ -4822,13 +3051,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli13
-  - env: Formula=kubernetes-cli14
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli14
   - env: Formula=ledger26
     os: osx
     osx_image: xcode7.3
@@ -4836,41 +3058,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=leptonica169
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/leptonica169
-  - env: Formula=libcouchbase1
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libcouchbase1
-  - env: Formula=libgee08
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libgee08
-  - env: Formula=libidn2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libidn2
-  - env: Formula=libmongoclient-legacy
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmongoclient-legacy
   - env: Formula=libmpc08
     os: osx
     osx_image: xcode7.3
@@ -4878,13 +3065,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
-  - env: Formula=libotr4
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libotr4
   - env: Formula=libpng12
     os: osx
     osx_image: xcode7.3
@@ -4899,20 +3079,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libpqxx3
-  - env: Formula=libuv0
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libuv0
-  - env: Formula=libxc21
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libxc21
   - env: Formula=libxml278
     os: osx
     osx_image: xcode7.3
@@ -4969,13 +3135,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm38
-  - env: Formula=log4cplus10
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/log4cplus10
   - env: Formula=logstash24
     os: osx
     osx_image: xcode7.3
@@ -4990,20 +3149,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lua53
-  - env: Formula=lz4r117
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lz4r117
-  - env: Formula=mapnik2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
   - env: Formula=mariadb100
     os: osx
     osx_image: xcode7.3
@@ -5027,13 +3172,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/maven32
-  - env: Formula=mkvtoolnix58
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mkvtoolnix58
   - env: Formula=mongodb30
     os: osx
     osx_image: xcode7.3
@@ -5062,34 +3200,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
-  - env: Formula=nasm21106
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nasm21106
-  - env: Formula=nifi021
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nifi021
-  - env: Formula=nu0
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nu0
-  - env: Formula=objective-caml312
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/objective-caml312
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode7.3
@@ -5098,13 +3208,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
-  - env: Formula=openjpeg20
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/openjpeg20
   - env: Formula=openssl101
     os: osx
     osx_image: xcode7.3
@@ -5133,13 +3236,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl514
-  - env: Formula=perl516
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl516
   - env: Formula=perl518
     os: osx
     osx_image: xcode7.3
@@ -5168,13 +3264,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=play22
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play22
   - env: Formula=postgresql94
     os: osx
     osx_image: xcode7.3
@@ -5191,14 +3280,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=povray36
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew unlink libpng
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/povray36
   - env: Formula=ppl011
     os: osx
     osx_image: xcode7.3
@@ -5206,13 +3287,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
-  - env: Formula=ppl10
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl10
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode7.3
@@ -5227,20 +3301,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
-  - env: Formula=rabbitmq30
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rabbitmq30
-  - env: Formula=raptor1
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/raptor1
   - env: Formula=rebar3
     os: osx
     osx_image: xcode7.3
@@ -5269,13 +3329,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis28
-  - env: Formula=riak132
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/riak132
   - env: Formula=ruby187
     os: osx
     osx_image: xcode7.3
@@ -5283,13 +3336,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby187
-  - env: Formula=ruby192
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby192
   - env: Formula=ruby193
     os: osx
     osx_image: xcode7.3
@@ -5318,13 +3364,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby22
-  - env: Formula=saxon6
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/saxon6
   - env: Formula=scala210
     os: osx
     osx_image: xcode7.3
@@ -5332,13 +3371,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala210
-  - env: Formula=scala211
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala211
   - env: Formula=selenium-server-standalone245
     os: osx
     osx_image: xcode7.3
@@ -5360,20 +3392,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/solr55
-  - env: Formula=sonar4
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/sonar4
-  - env: Formula=spidermonkey45
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/spidermonkey45
   - env: Formula=srtp15
     os: osx
     osx_image: xcode7.3
@@ -5381,13 +3399,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/srtp15
-  - env: Formula=subversion17
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion17
   - env: Formula=subversion18
     os: osx
     osx_image: xcode7.3
@@ -5416,13 +3427,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/thrift090
-  - env: Formula=unison232
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/unison232
   - env: Formula=unison240
     os: osx
     osx_image: xcode7.3
@@ -5437,20 +3441,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/v8-315
-  - env: Formula=valgrind38
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/valgrind38
-  - env: Formula=varnish3
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/varnish3
   - env: Formula=varnish4
     os: osx
     osx_image: xcode7.3
@@ -5465,13 +3455,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/vim74
-  - env: Formula=virtuoso616
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/virtuoso616
   - env: Formula=zeromq32
     os: osx
     osx_image: xcode7.3
@@ -5486,27 +3469,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=allegro4
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/allegro4
-  - env: Formula=android-ndk-r11c
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r11c
-  - env: Formula=android-ndk-r12b
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/android-ndk-r12b
   - env: Formula=ansible19
     os: osx
     osx_image: xcode6.4
@@ -5549,47 +3511,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/apache-spark16
-  - env: Formula=appledoc20
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc20
-  - env: Formula=appledoc21
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc21
-  - env: Formula=appledoc22
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - rm /usr/local/include/c++
-    - brew install gcc
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/appledoc22
-  - env: Formula=arangodb2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/arangodb2
-  - env: Formula=astyle204
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/astyle204
   - env: Formula=autoconf213
     os: osx
     osx_image: xcode6.4
@@ -5628,13 +3549,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bazel02
-  - env: Formula=bind99
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bind99
   - env: Formula=bison27
     os: osx
     osx_image: xcode6.4
@@ -5670,13 +3584,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
-  - env: Formula=camlp5-606
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/camlp5-606
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode6.4
@@ -5698,13 +3605,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=clojure14
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clojure14
   - env: Formula=cloog-ppl015
     os: osx
     osx_image: xcode6.4
@@ -5719,13 +3619,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
-  - env: Formula=cvsps2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cvsps2
   - env: Formula=docker111
     os: osx
     osx_image: xcode6.4
@@ -5740,20 +3633,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=doxygen1831
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/doxygen1831
-  - env: Formula=drush4
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush4
   - env: Formula=drush5
     os: osx
     osx_image: xcode6.4
@@ -5761,21 +3640,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
-  - env: Formula=duplicity06
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - pip install testrepository
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/duplicity06
-  - env: Formula=eigen2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/eigen2
   - env: Formula=eigen32
     os: osx
     osx_image: xcode6.4
@@ -5811,20 +3675,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gawk3
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gawk3
-  - env: Formula=gcc43
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc43
   - env: Formula=gcc44
     os: osx
     osx_image: xcode6.4
@@ -5882,28 +3732,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
-  - env: Formula=gdal111
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew unlink gdal
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gdal111
-  - env: Formula=gecode373
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gecode373
-  - env: Formula=gegl02
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gegl02
   - env: Formula=giflib5
     os: osx
     osx_image: xcode6.4
@@ -5911,13 +3739,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/giflib5
-  - env: Formula=git-tf-2.0.2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/git-tf-2.0.2
   - env: Formula=glfw2
     os: osx
     osx_image: xcode6.4
@@ -5983,13 +3804,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails25
-  - env: Formula=grails31
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/grails31
   - env: Formula=gsl1
     os: osx
     osx_image: xcode6.4
@@ -6032,20 +3846,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-plugins-ugly010
-  - env: Formula=gst-python010
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-python010
-  - env: Formula=gst-rtsp010
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gst-rtsp010
   - env: Formula=gstreamer010
     os: osx
     osx_image: xcode6.4
@@ -6053,27 +3853,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gstreamer010
-  - env: Formula=guile18
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/guile18
-  - env: Formula=hadoop121
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop121
-  - env: Formula=hadoop25
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hadoop25
   - env: Formula=hdf4
     os: osx
     osx_image: xcode6.4
@@ -6081,20 +3860,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hdf4
-  - env: Formula=hive011
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive011
-  - env: Formula=hive12
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/hive12
   - env: Formula=imagemagick-ruby186
     os: osx
     osx_image: xcode6.4
@@ -6137,13 +3902,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-as5
-  - env: Formula=jboss-forge1
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jboss-forge1
   - env: Formula=jenkins-lts
     os: osx
     osx_image: xcode6.4
@@ -6151,13 +3909,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jenkins-lts
-  - env: Formula=jetty76
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jetty76
   - env: Formula=jetty8
     os: osx
     osx_image: xcode6.4
@@ -6180,34 +3931,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jpeg9
-  - env: Formula=jruby1721
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby1721
-  - env: Formula=jruby9000
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jruby9000
-  - env: Formula=json-c010
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/json-c010
-  - env: Formula=jython253
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/jython253
   - env: Formula=kafka080
     os: osx
     osx_image: xcode6.4
@@ -6216,21 +3939,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
-  - env: Formula=kafka090
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew cask install java
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka090
-  - env: Formula=kettle54
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kettle54
   - env: Formula=kibana41
     os: osx
     osx_image: xcode6.4
@@ -6252,13 +3960,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli13
-  - env: Formula=kubernetes-cli14
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kubernetes-cli14
   - env: Formula=ledger26
     os: osx
     osx_image: xcode6.4
@@ -6266,41 +3967,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=leptonica169
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/leptonica169
-  - env: Formula=libcouchbase1
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libcouchbase1
-  - env: Formula=libgee08
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libgee08
-  - env: Formula=libidn2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libidn2
-  - env: Formula=libmongoclient-legacy
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmongoclient-legacy
   - env: Formula=libmpc08
     os: osx
     osx_image: xcode6.4
@@ -6308,13 +3974,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
-  - env: Formula=libotr4
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libotr4
   - env: Formula=libpng12
     os: osx
     osx_image: xcode6.4
@@ -6329,20 +3988,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libpqxx3
-  - env: Formula=libuv0
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libuv0
-  - env: Formula=libxc21
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libxc21
   - env: Formula=libxml278
     os: osx
     osx_image: xcode6.4
@@ -6399,13 +4044,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm38
-  - env: Formula=log4cplus10
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/log4cplus10
   - env: Formula=logstash24
     os: osx
     osx_image: xcode6.4
@@ -6420,20 +4058,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lua53
-  - env: Formula=lz4r117
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/lz4r117
-  - env: Formula=mapnik2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
   - env: Formula=mariadb100
     os: osx
     osx_image: xcode6.4
@@ -6457,13 +4081,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/maven32
-  - env: Formula=mkvtoolnix58
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mkvtoolnix58
   - env: Formula=mongodb30
     os: osx
     osx_image: xcode6.4
@@ -6492,34 +4109,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
-  - env: Formula=nasm21106
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nasm21106
-  - env: Formula=nifi021
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nifi021
-  - env: Formula=nu0
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/nu0
-  - env: Formula=objective-caml312
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/objective-caml312
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode6.4
@@ -6528,13 +4117,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
-  - env: Formula=openjpeg20
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/openjpeg20
   - env: Formula=openssl101
     os: osx
     osx_image: xcode6.4
@@ -6563,13 +4145,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl514
-  - env: Formula=perl516
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/perl516
   - env: Formula=perl518
     os: osx
     osx_image: xcode6.4
@@ -6598,13 +4173,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=play22
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play22
   - env: Formula=postgresql94
     os: osx
     osx_image: xcode6.4
@@ -6621,14 +4189,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=povray36
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew unlink libpng
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/povray36
   - env: Formula=ppl011
     os: osx
     osx_image: xcode6.4
@@ -6636,13 +4196,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
-  - env: Formula=ppl10
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl10
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode6.4
@@ -6657,20 +4210,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
-  - env: Formula=rabbitmq30
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rabbitmq30
-  - env: Formula=raptor1
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/raptor1
   - env: Formula=rebar3
     os: osx
     osx_image: xcode6.4
@@ -6699,13 +4238,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/redis28
-  - env: Formula=riak132
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/riak132
   - env: Formula=ruby187
     os: osx
     osx_image: xcode6.4
@@ -6713,13 +4245,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby187
-  - env: Formula=ruby192
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby192
   - env: Formula=ruby193
     os: osx
     osx_image: xcode6.4
@@ -6748,13 +4273,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ruby22
-  - env: Formula=saxon6
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/saxon6
   - env: Formula=scala210
     os: osx
     osx_image: xcode6.4
@@ -6762,13 +4280,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala210
-  - env: Formula=scala211
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/scala211
   - env: Formula=selenium-server-standalone245
     os: osx
     osx_image: xcode6.4
@@ -6790,20 +4301,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/solr55
-  - env: Formula=sonar4
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/sonar4
-  - env: Formula=spidermonkey45
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/spidermonkey45
   - env: Formula=srtp15
     os: osx
     osx_image: xcode6.4
@@ -6811,13 +4308,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/srtp15
-  - env: Formula=subversion17
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion17
   - env: Formula=subversion18
     os: osx
     osx_image: xcode6.4
@@ -6846,13 +4336,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/thrift090
-  - env: Formula=unison232
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/unison232
   - env: Formula=unison240
     os: osx
     osx_image: xcode6.4
@@ -6867,20 +4350,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/v8-315
-  - env: Formula=valgrind38
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/valgrind38
-  - env: Formula=varnish3
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/varnish3
   - env: Formula=varnish4
     os: osx
     osx_image: xcode6.4
@@ -6895,13 +4364,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/vim74
-  - env: Formula=virtuoso616
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/virtuoso616
   - env: Formula=zeromq32
     os: osx
     osx_image: xcode6.4

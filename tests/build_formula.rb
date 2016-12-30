@@ -31,7 +31,7 @@ puts
 
 log_output = File.read(log_file)
 
-if log_output.grep(Regexp.quote("https://git.io/brew-troubleshooting")).size > 0
+if log_output.include? "https://git.io/brew-troubleshooting"
     system("brew gist-logs #{package_full_name}")
 end
 
