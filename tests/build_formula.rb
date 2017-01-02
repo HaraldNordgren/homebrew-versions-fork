@@ -32,7 +32,11 @@ puts
 log_output = File.read(log_file)
 
 if log_output.include? "https://git.io/brew-troubleshooting"
-    system("brew gist-logs #{package_full_name}")
+    # http://stackoverflow.com/a/11887814/4237316
+    system(
+        {'HOMEBREW_GITHUB_API_TOKEN' => '64c3267d5a644891308b8c6ef248862e7cbf899b'},
+        "brew gist-logs #{package_full_name}"
+    )
 end
 
 puts log_output

@@ -3,6 +3,8 @@
 language: ruby
 notifications:
   email: false
+git:
+  depth: 10000
 branches:
   only:
   - master
@@ -109,6 +111,13 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
+  - env: Formula=boost157
+    os: osx
+    osx_image: xcode8.2
+    before_script:
+    - brew tap homebrew/versions
+    - brew update
+    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
   - env: Formula=boost159
     os: osx
     osx_image: xcode8.2
@@ -144,20 +153,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=cloog-ppl015
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog-ppl015
-  - env: Formula=cloog018
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
   - env: Formula=docker111
     os: osx
     osx_image: xcode8.2
@@ -214,14 +209,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gcc6
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - rm /usr/local/include/c++
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
   - env: Formula=giflib5
     os: osx
     osx_image: xcode8.2
@@ -236,18 +223,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/glfw2
-  - env: Formula=gmp4
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gmp4
   - env: Formula=gnupg21
     os: osx
     osx_image: xcode8.2
     before_script:
-    - brew unlink gnupg2 gpg-agent dirmngr
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnupg21
@@ -262,6 +241,7 @@ matrix:
     os: osx
     osx_image: xcode8.2
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
@@ -350,27 +330,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/influxdb08
-  - env: Formula=isl011
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl011
-  - env: Formula=isl012
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl012
-  - env: Formula=isl014
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl014
   - env: Formula=jboss-as5
     os: osx
     osx_image: xcode8.2
@@ -411,7 +370,7 @@ matrix:
     os: osx
     osx_image: xcode8.2
     before_script:
-    - brew cask install java
+    - brew cask reinstall java
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
@@ -443,13 +402,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=libmpc08
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
   - env: Formula=libpng12
     os: osx
     osx_image: xcode8.2
@@ -478,13 +430,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm-gcc28
-  - env: Formula=llvm33
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm33
   - env: Formula=llvm34
     os: osx
     osx_image: xcode8.2
@@ -557,18 +502,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mono3
-  - env: Formula=mpfr2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode8.2
     before_script:
-    - brew unlink open-mpi
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
@@ -637,13 +574,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=ppl011
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode8.2
@@ -760,6 +690,7 @@ matrix:
     os: osx
     osx_image: xcode8.2
     before_script:
+    - brew unlink subversion
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion18
@@ -927,6 +858,13 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
+  - env: Formula=boost157
+    os: osx
+    osx_image: xcode8.1
+    before_script:
+    - brew tap homebrew/versions
+    - brew update
+    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
   - env: Formula=boost159
     os: osx
     osx_image: xcode8.1
@@ -962,20 +900,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=cloog-ppl015
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog-ppl015
-  - env: Formula=cloog018
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
   - env: Formula=docker111
     os: osx
     osx_image: xcode8.1
@@ -1032,14 +956,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gcc6
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - rm /usr/local/include/c++
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
   - env: Formula=giflib5
     os: osx
     osx_image: xcode8.1
@@ -1054,18 +970,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/glfw2
-  - env: Formula=gmp4
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gmp4
   - env: Formula=gnupg21
     os: osx
     osx_image: xcode8.1
     before_script:
-    - brew unlink gnupg2 gpg-agent dirmngr
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnupg21
@@ -1080,6 +988,7 @@ matrix:
     os: osx
     osx_image: xcode8.1
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
@@ -1168,27 +1077,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/influxdb08
-  - env: Formula=isl011
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl011
-  - env: Formula=isl012
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl012
-  - env: Formula=isl014
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl014
   - env: Formula=jboss-as5
     os: osx
     osx_image: xcode8.1
@@ -1229,7 +1117,7 @@ matrix:
     os: osx
     osx_image: xcode8.1
     before_script:
-    - brew cask install java
+    - brew cask reinstall java
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
@@ -1261,13 +1149,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=libmpc08
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
   - env: Formula=libpng12
     os: osx
     osx_image: xcode8.1
@@ -1296,13 +1177,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm-gcc28
-  - env: Formula=llvm33
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm33
   - env: Formula=llvm34
     os: osx
     osx_image: xcode8.1
@@ -1375,18 +1249,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mono3
-  - env: Formula=mpfr2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode8.1
     before_script:
-    - brew unlink open-mpi
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
@@ -1432,13 +1298,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs192
-  - env: Formula=phantomjs198
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs198
   - env: Formula=play14
     os: osx
     osx_image: xcode8.1
@@ -1462,13 +1321,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=ppl011
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode8.1
@@ -1585,6 +1437,7 @@ matrix:
     os: osx
     osx_image: xcode8.1
     before_script:
+    - brew unlink subversion
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion18
@@ -1752,6 +1605,13 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
+  - env: Formula=boost157
+    os: osx
+    osx_image: xcode8
+    before_script:
+    - brew tap homebrew/versions
+    - brew update
+    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
   - env: Formula=boost159
     os: osx
     osx_image: xcode8
@@ -1787,20 +1647,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=cloog-ppl015
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog-ppl015
-  - env: Formula=cloog018
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
   - env: Formula=docker111
     os: osx
     osx_image: xcode8
@@ -1857,63 +1703,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gcc44
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc44
-  - env: Formula=gcc45
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc45
-  - env: Formula=gcc46
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc46
-  - env: Formula=gcc47
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc47
-  - env: Formula=gcc48
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc48
-  - env: Formula=gcc49
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc49
-  - env: Formula=gcc5
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc5
-  - env: Formula=gcc6
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - rm /usr/local/include/c++
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
   - env: Formula=giflib5
     os: osx
     osx_image: xcode8
@@ -1928,18 +1717,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/glfw2
-  - env: Formula=gmp4
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gmp4
   - env: Formula=gnupg21
     os: osx
     osx_image: xcode8
     before_script:
-    - brew unlink gnupg2 gpg-agent dirmngr
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnupg21
@@ -1954,6 +1735,7 @@ matrix:
     os: osx
     osx_image: xcode8
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
@@ -1969,6 +1751,7 @@ matrix:
     os: osx
     osx_image: xcode8
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go16
@@ -2056,27 +1839,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/influxdb08
-  - env: Formula=isl011
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl011
-  - env: Formula=isl012
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl012
-  - env: Formula=isl014
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl014
   - env: Formula=jboss-as5
     os: osx
     osx_image: xcode8
@@ -2117,7 +1879,7 @@ matrix:
     os: osx
     osx_image: xcode8
     before_script:
-    - brew cask install java
+    - brew cask reinstall java
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
@@ -2149,13 +1911,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=libmpc08
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
   - env: Formula=libpng12
     os: osx
     osx_image: xcode8
@@ -2184,13 +1939,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm-gcc28
-  - env: Formula=llvm33
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm33
   - env: Formula=llvm34
     os: osx
     osx_image: xcode8
@@ -2284,18 +2032,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mono3
-  - env: Formula=mpfr2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode8
     before_script:
-    - brew unlink open-mpi
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
@@ -2341,13 +2081,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs192
-  - env: Formula=phantomjs198
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs198
   - env: Formula=play14
     os: osx
     osx_image: xcode8
@@ -2371,13 +2104,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=ppl011
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode8
@@ -2494,6 +2220,7 @@ matrix:
     os: osx
     osx_image: xcode8
     before_script:
+    - brew unlink subversion
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion18
@@ -2661,6 +2388,13 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
+  - env: Formula=boost157
+    os: osx
+    osx_image: xcode7.3
+    before_script:
+    - brew tap homebrew/versions
+    - brew update
+    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
   - env: Formula=boost159
     os: osx
     osx_image: xcode7.3
@@ -2696,20 +2430,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=cloog-ppl015
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog-ppl015
-  - env: Formula=cloog018
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
   - env: Formula=docker111
     os: osx
     osx_image: xcode7.3
@@ -2766,63 +2486,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gcc44
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc44
-  - env: Formula=gcc45
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc45
-  - env: Formula=gcc46
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc46
-  - env: Formula=gcc47
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc47
-  - env: Formula=gcc48
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc48
-  - env: Formula=gcc49
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc49
-  - env: Formula=gcc5
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc5
-  - env: Formula=gcc6
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - rm /usr/local/include/c++
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
   - env: Formula=giflib5
     os: osx
     osx_image: xcode7.3
@@ -2837,18 +2500,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/glfw2
-  - env: Formula=gmp4
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gmp4
   - env: Formula=gnupg21
     os: osx
     osx_image: xcode7.3
     before_script:
-    - brew unlink gnupg2 gpg-agent dirmngr
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnupg21
@@ -2863,6 +2518,7 @@ matrix:
     os: osx
     osx_image: xcode7.3
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
@@ -2878,6 +2534,7 @@ matrix:
     os: osx
     osx_image: xcode7.3
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go16
@@ -2965,27 +2622,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/influxdb08
-  - env: Formula=isl011
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl011
-  - env: Formula=isl012
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl012
-  - env: Formula=isl014
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl014
   - env: Formula=jboss-as5
     os: osx
     osx_image: xcode7.3
@@ -3026,7 +2662,7 @@ matrix:
     os: osx
     osx_image: xcode7.3
     before_script:
-    - brew cask install java
+    - brew cask reinstall java
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
@@ -3058,13 +2694,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=libmpc08
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
   - env: Formula=libpng12
     os: osx
     osx_image: xcode7.3
@@ -3093,13 +2722,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm-gcc28
-  - env: Formula=llvm33
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm33
   - env: Formula=llvm34
     os: osx
     osx_image: xcode7.3
@@ -3193,18 +2815,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mono3
-  - env: Formula=mpfr2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode7.3
     before_script:
-    - brew unlink open-mpi
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
@@ -3250,13 +2864,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs192
-  - env: Formula=phantomjs198
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/phantomjs198
   - env: Formula=play14
     os: osx
     osx_image: xcode7.3
@@ -3280,13 +2887,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=ppl011
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode7.3
@@ -3403,6 +3003,7 @@ matrix:
     os: osx
     osx_image: xcode7.3
     before_script:
+    - brew unlink subversion
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion18
@@ -3570,6 +3171,13 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
+  - env: Formula=boost157
+    os: osx
+    osx_image: xcode6.4
+    before_script:
+    - brew tap homebrew/versions
+    - brew update
+    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
   - env: Formula=boost159
     os: osx
     osx_image: xcode6.4
@@ -3605,20 +3213,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/clang-format38
-  - env: Formula=cloog-ppl015
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog-ppl015
-  - env: Formula=cloog018
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/cloog018
   - env: Formula=docker111
     os: osx
     osx_image: xcode6.4
@@ -3675,63 +3269,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/freetds091
-  - env: Formula=gcc44
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc44
-  - env: Formula=gcc45
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc45
-  - env: Formula=gcc46
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc46
-  - env: Formula=gcc47
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc47
-  - env: Formula=gcc48
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc48
-  - env: Formula=gcc49
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc49
-  - env: Formula=gcc5
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc5
-  - env: Formula=gcc6
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - rm /usr/local/include/c++
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gcc6
   - env: Formula=giflib5
     os: osx
     osx_image: xcode6.4
@@ -3746,18 +3283,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/glfw2
-  - env: Formula=gmp4
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gmp4
   - env: Formula=gnupg21
     os: osx
     osx_image: xcode6.4
     before_script:
-    - brew unlink gnupg2 gpg-agent dirmngr
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnupg21
@@ -3772,6 +3301,7 @@ matrix:
     os: osx
     osx_image: xcode6.4
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
@@ -3787,6 +3317,7 @@ matrix:
     os: osx
     osx_image: xcode6.4
     before_script:
+    - brew unlink go
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go16
@@ -3874,27 +3405,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/influxdb08
-  - env: Formula=isl011
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl011
-  - env: Formula=isl012
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl012
-  - env: Formula=isl014
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/isl014
   - env: Formula=jboss-as5
     os: osx
     osx_image: xcode6.4
@@ -3935,7 +3445,7 @@ matrix:
     os: osx
     osx_image: xcode6.4
     before_script:
-    - brew cask install java
+    - brew cask reinstall java
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/kafka080
@@ -3967,13 +3477,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ledger26
-  - env: Formula=libmpc08
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/libmpc08
   - env: Formula=libpng12
     os: osx
     osx_image: xcode6.4
@@ -4002,13 +3505,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm-gcc28
-  - env: Formula=llvm33
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/llvm33
   - env: Formula=llvm34
     os: osx
     osx_image: xcode6.4
@@ -4102,18 +3598,10 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mono3
-  - env: Formula=mpfr2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mpfr2
   - env: Formula=open-mpi16
     os: osx
     osx_image: xcode6.4
     before_script:
-    - brew unlink open-mpi
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/open-mpi16
@@ -4189,13 +3677,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=ppl011
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/ppl011
   - env: Formula=protobuf250
     os: osx
     osx_image: xcode6.4
@@ -4312,6 +3793,7 @@ matrix:
     os: osx
     osx_image: xcode6.4
     before_script:
+    - brew unlink subversion
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/subversion18
