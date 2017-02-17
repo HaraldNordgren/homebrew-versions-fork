@@ -38,34 +38,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost-python159
-  - env: Formula=boost155
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
-  - env: Formula=boost157
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
-  - env: Formula=boost159
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost159
-  - env: Formula=boost160
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode8.2
@@ -691,34 +663,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost-python159
-  - env: Formula=boost155
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
-  - env: Formula=boost157
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
-  - env: Formula=boost159
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost159
-  - env: Formula=boost160
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode8.1
@@ -1344,34 +1288,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost-python159
-  - env: Formula=boost155
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
-  - env: Formula=boost157
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
-  - env: Formula=boost159
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost159
-  - env: Formula=boost160
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode8
@@ -2012,34 +1928,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost-python159
-  - env: Formula=boost155
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
-  - env: Formula=boost157
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
-  - env: Formula=boost159
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost159
-  - env: Formula=boost160
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode7.3
@@ -2680,34 +2568,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost-python159
-  - env: Formula=boost155
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost155
-  - env: Formula=boost157
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost157
-  - env: Formula=boost159
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost159
-  - env: Formula=boost160
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/boost160
   - env: Formula=cassandra21
     os: osx
     osx_image: xcode6.4
