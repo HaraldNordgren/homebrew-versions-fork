@@ -445,20 +445,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=protobuf250
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf250
-  - env: Formula=protobuf260
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
   - env: Formula=rebar3
     os: osx
     osx_image: xcode8.2
@@ -1063,20 +1049,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=protobuf250
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf250
-  - env: Formula=protobuf260
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
   - env: Formula=rebar3
     os: osx
     osx_image: xcode8.1
@@ -1696,20 +1668,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=protobuf250
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf250
-  - env: Formula=protobuf260
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
   - env: Formula=rebar3
     os: osx
     osx_image: xcode8
@@ -2329,20 +2287,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=protobuf250
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf250
-  - env: Formula=protobuf260
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
   - env: Formula=rebar3
     os: osx
     osx_image: xcode7.3
@@ -2969,20 +2913,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/postgresql95
-  - env: Formula=protobuf250
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf250
-  - env: Formula=protobuf260
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/protobuf260
   - env: Formula=rebar3
     os: osx
     osx_image: xcode6.4
