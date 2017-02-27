@@ -136,22 +136,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnuplot4
-  - env: Formula=go14
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
-  - env: Formula=go15
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go15
   - env: Formula=gradle214
     os: osx
     osx_image: xcode8.2
@@ -740,22 +724,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnuplot4
-  - env: Formula=go14
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
-  - env: Formula=go15
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go15
   - env: Formula=gradle214
     os: osx
     osx_image: xcode8.1
@@ -1344,30 +1312,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnuplot4
-  - env: Formula=go14
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
-  - env: Formula=go15
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go15
-  - env: Formula=go16
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go16
   - env: Formula=gradle214
     os: osx
     osx_image: xcode8
@@ -1963,30 +1907,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnuplot4
-  - env: Formula=go14
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
-  - env: Formula=go15
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go15
-  - env: Formula=go16
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go16
   - env: Formula=gradle214
     os: osx
     osx_image: xcode7.3
@@ -2582,30 +2502,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/gnuplot4
-  - env: Formula=go14
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go14
-  - env: Formula=go15
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go15
-  - env: Formula=go16
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew unlink go
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/go16
   - env: Formula=gradle214
     os: osx
     osx_image: xcode6.4
