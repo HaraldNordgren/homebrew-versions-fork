@@ -10,13 +10,6 @@ branches:
   - master
 matrix:
   include:
-  - env: Formula=bash-completion2
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bash-completion2
   - env: Formula=bazel02
     os: osx
     osx_image: xcode8.2
@@ -306,13 +299,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
-  - env: Formula=mariadb100
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mariadb100
   - env: Formula=maven31
     os: osx
     osx_image: xcode8.2
@@ -584,13 +570,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=bash-completion2
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bash-completion2
   - env: Formula=bazel02
     os: osx
     osx_image: xcode8.1
@@ -880,13 +859,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
-  - env: Formula=mariadb100
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mariadb100
   - env: Formula=maven31
     os: osx
     osx_image: xcode8.1
@@ -1158,13 +1130,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=bash-completion2
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bash-completion2
   - env: Formula=bazel02
     os: osx
     osx_image: xcode8
@@ -1461,13 +1426,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
-  - env: Formula=mariadb100
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mariadb100
   - env: Formula=maven31
     os: osx
     osx_image: xcode8
@@ -1739,13 +1697,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=bash-completion2
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bash-completion2
   - env: Formula=bazel02
     os: osx
     osx_image: xcode7.3
@@ -2042,13 +1993,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
-  - env: Formula=mariadb100
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mariadb100
   - env: Formula=maven31
     os: osx
     osx_image: xcode7.3
@@ -2320,13 +2264,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/zeromq40
-  - env: Formula=bash-completion2
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/bash-completion2
   - env: Formula=bazel02
     os: osx
     osx_image: xcode6.4
@@ -2623,13 +2560,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mapnik2
-  - env: Formula=mariadb100
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/mariadb100
   - env: Formula=maven31
     os: osx
     osx_image: xcode6.4
