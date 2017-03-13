@@ -66,13 +66,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=drush5
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
   - env: Formula=ffmpeg28
     os: osx
     osx_image: xcode8.2
@@ -385,13 +378,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=rebar3
-    os: osx
-    osx_image: xcode8.2
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rebar3
   - env: Formula=redis1310
     os: osx
     osx_image: xcode8.2
@@ -610,13 +596,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=drush5
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
   - env: Formula=ffmpeg28
     os: osx
     osx_image: xcode8.1
@@ -929,13 +908,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=rebar3
-    os: osx
-    osx_image: xcode8.1
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rebar3
   - env: Formula=redis1310
     os: osx
     osx_image: xcode8.1
@@ -1154,13 +1126,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=drush5
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
   - env: Formula=ffmpeg28
     os: osx
     osx_image: xcode8
@@ -1480,13 +1445,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=rebar3
-    os: osx
-    osx_image: xcode8
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rebar3
   - env: Formula=redis1310
     os: osx
     osx_image: xcode8
@@ -1705,13 +1663,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=drush5
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
   - env: Formula=ffmpeg28
     os: osx
     osx_image: xcode7.3
@@ -2031,13 +1982,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=rebar3
-    os: osx
-    osx_image: xcode7.3
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rebar3
   - env: Formula=redis1310
     os: osx
     osx_image: xcode7.3
@@ -2256,13 +2200,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/docker171
-  - env: Formula=drush5
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/drush5
   - env: Formula=ffmpeg28
     os: osx
     osx_image: xcode6.4
@@ -2589,13 +2526,6 @@ matrix:
     - brew tap homebrew/versions
     - brew update
     script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/play14
-  - env: Formula=rebar3
-    os: osx
-    osx_image: xcode6.4
-    before_script:
-    - brew tap homebrew/versions
-    - brew update
-    script: travis_wait 50 ruby tests/build_formula.rb homebrew/versions/rebar3
   - env: Formula=redis1310
     os: osx
     osx_image: xcode6.4
